@@ -57,9 +57,10 @@ public class Player : MonoBehaviour
             {
                 List<Vector3Int> adjTiles = new List<Vector3Int>();
                 RaycastHit2D hit;
-                hit = Physics2D.Raycast(transform.position, new Vector2(0, 0), Mathf.Infinity, 9);
+                int layerMask = 1 << 9;
+                hit = Physics2D.Raycast(transform.position, new Vector2(0, 0), Mathf.Infinity, layerMask);
                 Room currentRoom = hit.transform.GetComponent<Room>();
-                adjTiles.Add(currentRoom.getTilemap().WorldToCell(transform.position));
+               adjTiles.Add(currentRoom.getTilemap().WorldToCell(transform.position));
 
                 for(int y =  -1; y < 2; y++)
                 {

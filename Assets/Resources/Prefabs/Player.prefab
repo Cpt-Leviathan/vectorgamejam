@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7963405262528982215}
   - component: {fileID: 885230950202244824}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CM vcam2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 67175348112786404}
   - component: {fileID: 5701358416692769215}
   - component: {fileID: 2954475686646231836}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 3768795486916738847}
   - component: {fileID: 6559086822026299039}
   - component: {fileID: 2978785157012625001}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 7520521666651495489}
   - component: {fileID: 4991399293240089299}
   - component: {fileID: 3992150093506704354}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MiniMap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
