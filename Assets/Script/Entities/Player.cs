@@ -11,12 +11,17 @@ public class Player : MonoBehaviour
     [SerializeField] private float speed;
     public bool canRefill;
     private Rigidbody2D rb;
+    GameObject cinemachine;
+    GameObject minMap;
 
     public GridLayout gl;
 
     public void InitPlayer()
     {
         //speed = 2;
+
+        cinemachine = GameObject.Instantiate(Resources.Load("Prefabs/CM vcam2", typeof(GameObject))) as GameObject;
+        minMap = GameObject.Instantiate(Resources.Load("Prefabs/MiniMap", typeof(GameObject))) as GameObject;
 
         activeTool = 0;
         tools = new List<Tool>();
@@ -38,9 +43,18 @@ public class Player : MonoBehaviour
     {
         Move();
 
+        Vector3 temp = new Vector3(transform.position.x, transform.position.y, -12);
+        cinemachine.transform.position = temp;
+
+        Vector3 temp2 = new Vector3(transform.position.x, transform.position.y, -35);
+        minMap.transform.position = temp2;
+
+
+
         SwitchTool();
 
         Interact();
+    
     }
 
     public void FixedUpdatePlayer()
@@ -87,19 +101,56 @@ public class Player : MonoBehaviour
     {
         Vector2 dir = new Vector2(0,0);
 
-        if (InputManager.GetKeysInput().W)
+        if (InputManager.GetKeysInput().W) {
+            transform.localEulerAngles = new Vector3(0, 0, 0);
             dir += new Vector2(0, 1);
-
-        if (InputManager.GetKeysInput().S)
+        }
+        if (InputManager.GetKeysInput().S) {
+            transform.localEulerAngles = new Vector3(0, 0, 180);
             dir += new Vector2(0, -1);
+        }
 
-        if (InputManager.GetKeysInput().A)
+        if (InputManager.GetKeysInput().A) {
+            transform.localEulerAngles = new Vector3(0, 0, 90);
             dir += new Vector2(-1, 0);
+        }
 
-        if (InputManager.GetKeysInput().D)
+        if (InputManager.GetKeysInput().D) {
+            transform.localEulerAngles = new Vector3(0, 0, -90);
             dir += new Vector2(1, 0);
+        }
+
+
 
         rb.velocity = dir * speed;
+    }
+
+    private void RotatePlayer()
+    {
+        //left
+        if (Input.GetAxis("Horizontal") > 0) {
+            //transform.rotation = new Quaternion(0,-90,0,0);
+            transform.eulerAngles = new Vector2(0, -90);
+            //new Quaternion(0,90,0,0
+        }
+        //right
+        if (Input.GetAxis("Horizontal") > 0) {
+            //transform.rotation = new Quaternion(0, 90, 0, 0);
+            transform.eulerAngles = new Vector2(0, 90);
+
+        }
+        //down
+        if (Input.GetAxis("Vertical") < 0) {
+            //transform.rotation = new Quaternion(0, 180, 0, 0);
+            transform.eulerAngles = new Vector2(0, 180);
+
+        }
+        //up
+        if (Input.GetAxis("Vertical") > 0) {
+            //transform.rotation = new Quaternion(0, 0, 0, 0);
+            transform.eulerAngles = new Vector3(0, 0, 0);
+
+        }
     }
 
     private void SwitchTool()
