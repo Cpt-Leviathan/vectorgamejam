@@ -46,7 +46,6 @@ public class FlowManager
     //Update FlowManager
     public void Update(float dt)
     {
-
         //Update the flow
         if (currentFlow != null && flowInitialized)
             currentFlow.UpdateFlow(dt);
