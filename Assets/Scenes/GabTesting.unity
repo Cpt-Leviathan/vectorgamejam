@@ -277,30 +277,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &316334075 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5592169926324494772, guid: 10f8894ea3de7fe468cb12b92fa418c8,
-    type: 3}
-  m_PrefabInstance: {fileID: 5592169926034685519}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &444841459 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5592169926193890236, guid: 10f8894ea3de7fe468cb12b92fa418c8,
-    type: 3}
-  m_PrefabInstance: {fileID: 5592169926034685519}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &667909112
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,18 +544,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1900300255 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5592169925779077520, guid: 10f8894ea3de7fe468cb12b92fa418c8,
-    type: 3}
-  m_PrefabInstance: {fileID: 5592169926034685519}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2063810717 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7311462922718736659, guid: 5dedbb93ed79b67419e6940ebd616643,
@@ -608,6 +572,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592169926193890238, guid: 10f8894ea3de7fe468cb12b92fa418c8,
+        type: 3}
+      propertyPath: m_Name
+      value: ToolBox2
       objectReference: {fileID: 0}
     - target: {fileID: 5592169926273036091, guid: 10f8894ea3de7fe468cb12b92fa418c8,
         type: 3}
@@ -668,6 +637,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UITools
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592169926483208070, guid: 10f8894ea3de7fe468cb12b92fa418c8,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592169926483208070, guid: 10f8894ea3de7fe468cb12b92fa418c8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592169926483208070, guid: 10f8894ea3de7fe468cb12b92fa418c8,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592169926483208070, guid: 10f8894ea3de7fe468cb12b92fa418c8,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.825267
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592169926483208070, guid: 10f8894ea3de7fe468cb12b92fa418c8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592169926483208070, guid: 10f8894ea3de7fe468cb12b92fa418c8,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592169926483208070, guid: 10f8894ea3de7fe468cb12b92fa418c8,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.1852781
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592169926483208070, guid: 10f8894ea3de7fe468cb12b92fa418c8,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.17563353
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10f8894ea3de7fe468cb12b92fa418c8, type: 3}
@@ -816,17 +825,17 @@ PrefabInstance:
         type: 3}
       propertyPath: tool2
       value: 
-      objectReference: {fileID: 444841459}
+      objectReference: {fileID: 0}
     - target: {fileID: 3053245143236086235, guid: e10da6a0f9dfafc4bb8bdf31338090ab,
         type: 3}
       propertyPath: tool3
       value: 
-      objectReference: {fileID: 1900300255}
+      objectReference: {fileID: 0}
     - target: {fileID: 3053245143236086235, guid: e10da6a0f9dfafc4bb8bdf31338090ab,
         type: 3}
       propertyPath: tool4
       value: 
-      objectReference: {fileID: 316334075}
+      objectReference: {fileID: 0}
     - target: {fileID: 7234435206040997720, guid: e10da6a0f9dfafc4bb8bdf31338090ab,
         type: 3}
       propertyPath: m_Name
