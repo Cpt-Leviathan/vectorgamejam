@@ -25,6 +25,7 @@ public class SpaceShipManager
     public void init()
     {
         krina = new SpaceShip();
+       
         krina.init();
 
     }

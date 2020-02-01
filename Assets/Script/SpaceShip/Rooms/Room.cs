@@ -17,6 +17,7 @@ public class Room : MonoBehaviour
 
         bounds = tilemap.cellBounds;
         allTiles = tilemap.GetTilesBlock(bounds);
+        tileList = new List<Tile>();
 
         for (int x = 0; x < bounds.size.x; x++)
         {
@@ -25,8 +26,11 @@ public class Room : MonoBehaviour
                 TileBase tile = allTiles[x + y * bounds.size.x];
                 if (tile != null)
                 {
-                    tileList[(x * bounds.size.y) + y].init(tile);
-                    //Debug.Log("x:" + x + " y:" + y + " tile:" + tile.name);
+                    Tile t = new Tile();
+                    t.init(tile);
+                    tileList.Add(t);
+
+                   // Debug.Log("x:" + x + " y:" + y + " tile:" + tile.name);
                 }
                 else
                 {
@@ -42,7 +46,16 @@ public class Room : MonoBehaviour
 
         for (int i = 0; i < RoomsDestroyed; i++)
         {
-            tileList[(RandomTile(bounds.size.x) * bounds.size.y) + RandomTile(bounds.size.y)].damageTile();
+            if (tileList.Count < 1)
+            {
+                Debug.Log("not working");
+            }
+            else
+            {
+                Debug.Log(tileList[/*RandomTile(tileList.Count-1)*/0]);
+                tileList[/*RandomTile(tileList.Count-1)*/0].damageTile();
+            }
+            
         }
     }
 

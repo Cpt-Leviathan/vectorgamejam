@@ -17,6 +17,11 @@ public class SpaceShip
         modifier = Random.Range(minTime, maxTime);
         nextTime = Time.time + modifier;
         mySpaceShip.AddRange(Object.FindObjectsOfType<Room>());
+
+        foreach (Room r in mySpaceShip)
+        {
+            r.init();
+        }
         
     }
 
@@ -31,7 +36,6 @@ public class SpaceShip
                 nextTime = Time.time + modifier;
             }
         }
-        
 
     }
 }
