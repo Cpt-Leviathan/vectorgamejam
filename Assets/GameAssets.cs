@@ -2,16 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum EnumSound
-{
-    spaceHit,
-    extincteur,
-    hammer,
-    menuSelectionSound,
-    welder,
-    wrench,
-}
-
 public class GameAssets : MonoBehaviour
 {
     private static GameAssets _i;
@@ -37,5 +27,12 @@ public class GameAssets : MonoBehaviour
     public AudioClip securityBreachBackground;
     public AudioClip blazingStartBackground;
 
+    public SoundAudioClip[] soundAudioClipArray;
 
+    [System.Serializable]
+    public class SoundAudioClip
+    {
+        public SoundManager.EnumSound sound;
+        public AudioClip audioClip;
+    }
 }

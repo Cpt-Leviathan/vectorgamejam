@@ -18,7 +18,7 @@ public class testingScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             RepairList.generateListOrders(7);
-            SoundManager.Instance.PlaySound(EnumSound.spaceHit);
+            SoundManager.Instance.PlaySound(SoundManager.EnumSound.spaceHit);
             //SoundManager.PlaySound();
         }
     }

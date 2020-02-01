@@ -54,3 +54,16 @@ MonoBehaviour:
     type: 3}
   blazingStartBackground: {fileID: 8300000, guid: 0d3bd4ba175ead24daccfd2530b474e2,
     type: 3}
+  soundAudioClipArray:
+  - sound: 0
+    audioClip: {fileID: 8300000, guid: f43cd0be1670b4f4a88bccee657d9d32, type: 3}
+  - sound: 1
+    audioClip: {fileID: 8300000, guid: 29ae7c714795f9e45a1fb596467b5620, type: 3}
+  - sound: 2
+    audioClip: {fileID: 8300000, guid: df8df7dd0549c7b478ff09b302d819ec, type: 3}
+  - sound: 3
+    audioClip: {fileID: 8300000, guid: 093f891a9e41df64d89c588203a66412, type: 3}
+  - sound: 4
+    audioClip: {fileID: 8300000, guid: 709eae46e51cc4e40a9843f7cf4427c7, type: 3}
+  - sound: 5
+    audioClip: {fileID: 8300000, guid: e39fdd58ba413544a8884a28621179cf, type: 3}
