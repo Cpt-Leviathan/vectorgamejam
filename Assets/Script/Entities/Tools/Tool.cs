@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Tool
 {
-    protected int durability, durabilityCost, durabilityMax;
+
+    private int durability, durabilityCost, durabilityMax;
     private RequireListTool type;
-    protected double repairSpeed;
+    private double repairSpeed;
 
     virtual public void InitTool(RequireListTool type_, int durabilityMax_, int durabilityCost_)
     {
@@ -35,6 +36,7 @@ public class Tool
 
     public void FillEnergy()
     {
+        Debug.Log("Refilling.....");
         durability = durabilityMax;
     }
 }

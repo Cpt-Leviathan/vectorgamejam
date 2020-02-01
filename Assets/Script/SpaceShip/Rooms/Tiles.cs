@@ -42,4 +42,9 @@ public class Tiles
             isDamaged = false;
         }
     }
+
+    public bool getIsDamaged()
+    {
+        return isDamaged;
+    }
 }
