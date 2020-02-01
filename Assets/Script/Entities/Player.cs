@@ -60,21 +60,23 @@ public class Player : MonoBehaviour
                 int layerMask = 1 << 9;
                 hit = Physics2D.Raycast(transform.position, new Vector2(0, 0), Mathf.Infinity, layerMask);
                 Room currentRoom = hit.transform.GetComponent<Room>();
-                adjTiles.Add(currentRoom.tilemap.WorldToCell(transform.position));
+                //adjTiles.Add(currentRoom.tilemap.WorldToCell(transform.position));
 
                 for(int y =  -1; y < 2; y++)
                 {
                     for(int x = -1; x < 2; x++)
                     {
-                        adjTiles.Add(new Vector3Int(x, y, 0));
+                        adjTiles.Add(new Vector3Int(currentRoom.tilemap.WorldToCell(transform.position).x + x, currentRoom.tilemap.WorldToCell(transform.position).y + y, 0));
                     }
                 }
 
-                TileBase[] tiles = currentRoom.allTilesBases;
-                foreach(TileBase t in tiles)
+                //Debug.Log(adjTiles.Count);
+
+                List<Tile> tiles = currentRoom.existingTiles;
+                foreach(Tile t in tiles)
                 {
                     if (currentRoom.tilemap.GetTile(adjTiles[0]) == t){
-                        Debug.Log("tile trouver");
+                        //Debug.Log("tile trouver");
                     }
                 }
 
