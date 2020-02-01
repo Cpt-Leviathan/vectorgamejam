@@ -21,16 +21,17 @@ public class SpaceShipManager
             return instance;
         }
     }
-
+    SpaceShip krina;
     public void init()
     {
-
+        krina = new SpaceShip();
+        krina.init();
 
     }
 
     public void Update()
     {
-
+        krina.UpToDate();
     }
 
     public void FixedUpdate()
