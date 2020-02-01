@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class Tile
+public class Tiles
 {
     bool isDamaged;
     TileBase tile;
