@@ -25,7 +25,8 @@ public class PlayerManager
 
     public void init()
     {
-        player = new Player();
+        GameObject temp = GameObject.Instantiate(Resources.Load("Prefabs/Player", typeof(GameObject))) as GameObject;
+        player = temp.GetComponent<Player>();
         player.InitPlayer();
 
     }

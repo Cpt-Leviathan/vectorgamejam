@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class Tool
 {
-    protected int energy, energyCost, energyMax;
+    protected int durability, durabilityCost, durabilityMax;
+    private RequireListTool type;
     protected double repairSpeed;
 
-    virtual public void InitTool()
+    virtual public void InitTool(RequireListTool type_, int durabilityMax_, int durabilityCost_)
     {
-        energy = 100;
-        energyCost = 10;
-        energyMax = 100;
+        type = type_;
+        durabilityMax = durabilityMax_;
+        durability = durabilityMax;
+        durabilityCost = durabilityCost_;
     }
 
     virtual public void UpdateTool()
@@ -24,14 +26,15 @@ public class Tool
     //
     virtual public void Use()
     {
-        if (energy > 0)
+        if (durability > 0)
         {
-            energy -= energyCost;
+            durability -= durabilityCost;
+            Debug.Log("use" + type );
         }
     }
 
     public void FillEnergy()
     {
-        energy = energyMax;
+        durability = durabilityMax;
     }
 }

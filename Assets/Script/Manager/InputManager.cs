@@ -14,7 +14,7 @@ public class InputManager
         toRet.S = Input.GetKey(KeyCode.S);
         toRet.D = Input.GetKey(KeyCode.D);
         toRet.W = Input.GetKey(KeyCode.W);
-        toRet.F = Input.GetKey(KeyCode.F);
+        toRet.F = Input.GetKeyDown(KeyCode.F);
         toRet.tool1Pressed = Input.GetKey(KeyCode.Alpha1);
         toRet.tool2Pressed = Input.GetKey(KeyCode.Alpha2);
         toRet.tool3Pressed = Input.GetKey(KeyCode.Alpha3);

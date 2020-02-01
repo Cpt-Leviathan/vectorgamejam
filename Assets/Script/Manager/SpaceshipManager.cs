@@ -31,7 +31,6 @@ public class SpaceShipManager
     public void Update()
     {
 
-
     }
 
     public void FixedUpdate()
