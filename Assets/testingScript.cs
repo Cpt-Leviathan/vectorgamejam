@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class testingScript : MonoBehaviour
 {
-    
+    List<int> testlist;
     // Start is called before the first frame update
     void Start()
     {
-        RepairList.init();
+        testlist = new List<int>();
     }
 
     // Update is called once per frame
@@ -16,7 +16,7 @@ public class testingScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            RepairList.generateListOrder(3);
+            RepairList.generateListOrders(7);
         }
     }
 }
