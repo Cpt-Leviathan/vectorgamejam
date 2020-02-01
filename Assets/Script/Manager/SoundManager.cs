@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public static class SoundManager
+public class SoundManager
 {
-    /*private static SoundManager instance = null;
+    private static SoundManager instance = null;
 
     private SoundManager()
     {
@@ -21,7 +21,7 @@ public static class SoundManager
             }
             return instance;
         }
-    }*/
+    }
 
     public enum EnumSound
     {
@@ -33,7 +33,6 @@ public static class SoundManager
         wrench,
         PlayerMove,
     }
-    //GameAssets ga;
 
     private static Dictionary<EnumSound, float> soundTimerDictionary;
     private static GameObject oneShotGameObject;
@@ -76,34 +75,6 @@ public static class SoundManager
             Object.Destroy(soundGameObject, audioSource.clip.length);
         }
     }
-
-    /*public void PlaySound(EnumSound sound)
-    {
-        ga = (GameObject.Instantiate(Resources.Load("Prefabs/GameAssets")) as GameObject).GetComponent<GameAssets>();
-        GameObject soundGameObject = new GameObject("Sound");
-        AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
-        switch (sound)
-        {
-            case EnumSound.spaceHit:
-                audioSource.PlayOneShot(GameAssets.i.spaceHit);
-                break;
-            case EnumSound.extincteur:
-                audioSource.PlayOneShot(GameAssets.i.extincteur);
-                break;
-            case EnumSound.hammer:
-                audioSource.PlayOneShot(GameAssets.i.hammer);
-                break;
-            case EnumSound.menuSelectionSound:
-                audioSource.PlayOneShot(GameAssets.i.menuSelectionSound);
-                break;
-            case EnumSound.welder:
-                audioSource.PlayOneShot(GameAssets.i.welder);
-                break;
-            case EnumSound.wrench:
-                audioSource.PlayOneShot(GameAssets.i.wrench);
-                break;
-        }
-    }*/
 
     private static bool CanPlaySound(EnumSound sound)
     {
@@ -150,4 +121,5 @@ public static class SoundManager
     {
 
     }
+
 }
