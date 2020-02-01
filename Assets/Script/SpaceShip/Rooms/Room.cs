@@ -5,17 +5,25 @@ using UnityEngine.Tilemaps;
 
 public class Room : MonoBehaviour
 {
-    Tilemap tilemap;
+    public Tilemap tilemap;
     List<Tiles> tileList;
 
     BoundsInt bounds;
     public TileBase[] allTilesBases;
     public List<Tile> allTiles;
 
+    public List<TileBase> existingTilesBases;
+    public List<Tile> existingTiles;
+
+
     public void init()
     {
         tilemap = GetComponent<Tilemap>();
         allTiles = new List<Tile>();
+
+
+        existingTiles = new List<Tile>();
+        existingTilesBases = new List<TileBase>();
 
         bounds = tilemap.cellBounds;
         allTilesBases = tilemap.GetTilesBlock(bounds);
@@ -34,9 +42,11 @@ public class Room : MonoBehaviour
             for (int y = 0; y < bounds.size.y; y++)
             {
                 TileBase tile = allTilesBases[x + y * bounds.size.x];
-                Tile test = (tile as Tile);
+              
                 if (tile != null)
                 {
+                    existingTiles.Add((tile as Tile));
+                    existingTilesBases.Add(tile);
                     Tiles t = new Tiles();
                     t.init(allTiles[i]);
                     
