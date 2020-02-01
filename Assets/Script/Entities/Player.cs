@@ -69,14 +69,25 @@ public class Player : MonoBehaviour
                         adjTiles.Add(new Vector3Int(currentRoom.tilemap.WorldToCell(transform.position).x + x, currentRoom.tilemap.WorldToCell(transform.position).y + y, 0));
                     }
                 }
-                
-                //List<Tile> tiles  = currentRoom.existingTiles;
+//<<<<<<< HEAD
+//                
+//                //List<Tile> tiles  = currentRoom.existingTiles;
+//                bool foundDamaged = false;
+//                for(int i = 0; i < adjTiles.Count && !foundDamaged; i++) {
+//                    ///Tiles t = tiles[i].gameObject.GetComponent<Tiles>();
+//                    Tiles t = currentRoom.tilemap.GetTile<Tile>(adjTiles[i]).gameObject.GetComponent<Tiles>();
+//                    if (t.getIsDamaged())
+//                    {
+//=======
+
+                List<Tiles> tiles = new List<Tiles>();
+                tiles.AddRange(currentRoom.tiles.Values);
                 bool foundDamaged = false;
-                for(int i = 0; i < adjTiles.Count && !foundDamaged; i++) {
-                    ///Tiles t = tiles[i].gameObject.GetComponent<Tiles>();
-                    Tiles t = currentRoom.tilemap.GetTile<Tile>(adjTiles[i]).gameObject.GetComponent<Tiles>();
-                    if (t.getIsDamaged())
-                    {
+                for(int i = 0; i < tiles.Count && !foundDamaged; i++) {
+                    Tiles t = tiles[i];
+
+                    if (t.getIsDamaged()){
+//>>>>>>> 6383806a55206e345aac2f60218e2bc378b4d121
                         foundDamaged = true;
                         tools[activeTool].Use(t);
                     }
