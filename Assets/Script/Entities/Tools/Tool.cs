@@ -25,7 +25,7 @@ public class Tool
     //
     //From player, Give Use a tile to repair
     //
-    virtual public void Use()
+    virtual public void Use(Tiles t)
     {
         if (durability > 0)
         {
