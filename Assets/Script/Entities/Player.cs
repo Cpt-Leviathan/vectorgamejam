@@ -70,10 +70,11 @@ public class Player : MonoBehaviour
                     }
                 }
 
-                List<Tile> tiles  = currentRoom.existingTiles;
+                List<Tiles> tiles = new List<Tiles>();
+                tiles.AddRange(currentRoom.tiles.Values);
                 bool foundDamaged = false;
                 for(int i = 0; i < tiles.Count && !foundDamaged; i++) {
-                    Tiles t = tiles[i].gameObject.GetComponent<Tiles>();
+                    Tiles t = tiles[i];
 
                     if (t.getIsDamaged()){
                         foundDamaged = true;

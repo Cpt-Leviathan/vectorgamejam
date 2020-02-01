@@ -7,8 +7,8 @@ public class SpaceShip
     List<Room> mySpaceShip;
     float nextTime;
     float modifier;
-    float minTime = 15;
-    float maxTime = 40;
+    float minTime = 1;
+    float maxTime = 2;
 
     public void init()
     {

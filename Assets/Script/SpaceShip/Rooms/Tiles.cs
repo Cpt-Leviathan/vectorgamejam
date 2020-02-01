@@ -6,13 +6,14 @@ using UnityEngine.Tilemaps;
 public class Tiles
 {
     bool isDamaged;
-    Tile tile;
+    Vector2Int pos;
+    TileBase texture;
     List<RequireListTool> repairList;
 
-    public void init(Tile tileMapTile)
+    public void init(TileBase tb)
     {
         isDamaged = false;
-        tile = tileMapTile;
+        texture = tb;
         repairList = new List<RequireListTool>();
     }
     
@@ -41,6 +42,11 @@ public class Tiles
         {
             isDamaged = false;
         }
+    }
+
+    public void setPos(Vector2Int v)
+    {
+        pos = v;
     }
 
     public bool getIsDamaged()
