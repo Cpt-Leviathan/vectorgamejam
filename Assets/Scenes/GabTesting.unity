@@ -290,7 +290,6 @@ GameObject:
   - component: {fileID: 119592918}
   - component: {fileID: 119592917}
   - component: {fileID: 119592921}
-  - component: {fileID: 119592922}
   m_Layer: 0
   m_Name: StarField
   m_TagString: Untagged
@@ -385,18 +384,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parallax: 4
---- !u!114 &119592922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 119592916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eef4809eb57819147a0cc9e54de29591, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &438285338
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,7 +397,6 @@ GameObject:
   - component: {fileID: 438285342}
   - component: {fileID: 438285341}
   - component: {fileID: 438285340}
-  - component: {fileID: 438285339}
   m_Layer: 0
   m_Name: StarField_Front
   m_TagString: Untagged
@@ -418,18 +404,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &438285339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 438285338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eef4809eb57819147a0cc9e54de29591, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &438285340
 MonoBehaviour:
   m_ObjectHideFlags: 0
