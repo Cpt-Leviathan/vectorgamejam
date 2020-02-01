@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class SoundManager
+public static class SoundManager
 {
-    private static SoundManager instance = null;
+    /*private static SoundManager instance = null;
 
     private SoundManager()
     {
@@ -21,7 +21,7 @@ public class SoundManager
             }
             return instance;
         }
-    }
+    }*/
 
     public enum EnumSound
     {
@@ -33,7 +33,7 @@ public class SoundManager
         wrench,
         PlayerMove,
     }
-    GameAssets ga;
+    //GameAssets ga;
 
     private static Dictionary<EnumSound, float> soundTimerDictionary;
     private static GameObject oneShotGameObject;
@@ -45,7 +45,7 @@ public class SoundManager
     }
 
 
-    public void PlaySound(EnumSound sound)
+    public static void PlaySound(EnumSound sound)
     {
         if (CanPlaySound(sound))
         {

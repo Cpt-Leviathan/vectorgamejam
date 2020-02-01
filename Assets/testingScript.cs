@@ -18,8 +18,28 @@ public class testingScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             RepairList.generateListOrders(7);
-            SoundManager.Instance.PlaySound(SoundManager.EnumSound.spaceHit);
+            SoundManager.PlaySound(SoundManager.EnumSound.spaceHit);
             //SoundManager.PlaySound();
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            SoundManager.PlaySound(SoundManager.EnumSound.extincteur);
+        }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            SoundManager.PlaySound(SoundManager.EnumSound.hammer);
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            SoundManager.PlaySound(SoundManager.EnumSound.menuSelectionSound);
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SoundManager.PlaySound(SoundManager.EnumSound.welder);
+        }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            SoundManager.PlaySound(SoundManager.EnumSound.wrench);
         }
     }
 }
