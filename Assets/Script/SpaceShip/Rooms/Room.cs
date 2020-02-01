@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 public class Room : MonoBehaviour
 {
     Tilemap tilemap;
-    List<Tile> tileList;
+    List<Tiles> tileList;
 
     BoundsInt bounds;
     TileBase[] allTiles;
@@ -17,7 +17,7 @@ public class Room : MonoBehaviour
 
         bounds = tilemap.cellBounds;
         allTiles = tilemap.GetTilesBlock(bounds);
-        tileList = new List<Tile>();
+        tileList = new List<Tiles>();
 
         for (int x = 0; x < bounds.size.x; x++)
         {
@@ -26,8 +26,10 @@ public class Room : MonoBehaviour
                 TileBase tile = allTiles[x + y * bounds.size.x];
                 if (tile != null)
                 {
-                    Tile t = new Tile();
+                    Tiles t = new Tiles();
                     t.init(tile);
+                    //tilemap.GetTile();
+                    //tilemap.Tile();
                     tileList.Add(t);
 
                    // Debug.Log("x:" + x + " y:" + y + " tile:" + tile.name);
