@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a83b477edf475c5468d463a48ebdd83e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 10.06
   canRefill: 0
   gl: {fileID: 4490183744563557500, guid: 9179e8279d3afd748aec38da54590dd2, type: 3}
 --- !u!61 &2978785157012625001

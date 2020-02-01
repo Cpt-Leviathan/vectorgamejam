@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
 
         activeTool = 0;
         tools = new List<Tool>();
-        for(int i = 0; i < 4; i++)
+        for (int i = 0; i < 4; i++)
         {
             tools.Add(new Tool());
         }
@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
         tools[3].InitTool(RequireListTool.Welder, 100, 20);
 
         rb = GetComponent<Rigidbody2D>();
-       
+
     }
 
     public void UpdatePlayer()
@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
 
     public void FixedUpdatePlayer()
     {
-        
+
     }
 
     public void Interact()
@@ -55,61 +55,63 @@ public class Player : MonoBehaviour
                 tools[activeTool].FillEnergy();
             else
             {
-                List<Vector3Int> adjTiles = new List<Vector3Int>();
+                List<Vector2Int> adjTiles = new List<Vector2Int>();
                 RaycastHit2D hit;
                 int layerMask = 1 << 9;
                 hit = Physics2D.Raycast(transform.position, new Vector2(0, 0), Mathf.Infinity, layerMask);
                 Room currentRoom = hit.transform.GetComponent<Room>();
                 //adjTiles.Add(currentRoom.tilemap.WorldToCell(transform.position));
 
-                for(int y =  -1; y < 2; y++)
+                for (int y = -1; y < 2; y++)
                 {
-                    for(int x = -1; x < 2; x++)
+                    for (int x = -1; x < 2; x++)
                     {
-                        adjTiles.Add(new Vector3Int(currentRoom.tilemap.WorldToCell(transform.position).x + x, currentRoom.tilemap.WorldToCell(transform.position).y + y, 0));
+                        adjTiles.Add(new Vector2Int(currentRoom.tilemap.WorldToCell(transform.position).x + x, currentRoom.tilemap.WorldToCell(transform.position).y + y));
                     }
                 }
-//<<<<<<< HEAD
-//                
-//                //List<Tile> tiles  = currentRoom.existingTiles;
-//                bool foundDamaged = false;
-//                for(int i = 0; i < adjTiles.Count && !foundDamaged; i++) {
-//                    ///Tiles t = tiles[i].gameObject.GetComponent<Tiles>();
-//                    Tiles t = currentRoom.tilemap.GetTile<Tile>(adjTiles[i]).gameObject.GetComponent<Tiles>();
-//                    if (t.getIsDamaged())
-//                    {
-//=======
-
-                List<Tiles> tiles = new List<Tiles>();
-                tiles.AddRange(currentRoom.tiles.Values);
+               
+                //<<<<<<< HEAD
+                //                
+                //                //List<Tile> tiles  = currentRoom.existingTiles;
                 bool foundDamaged = false;
-                for(int i = 0; i < tiles.Count && !foundDamaged; i++) {
-                    Tiles t = tiles[i];
-
-                    if (t.getIsDamaged()){
-//>>>>>>> 6383806a55206e345aac2f60218e2bc378b4d121
-                        foundDamaged = true;
+                //                for(int i = 0; i < adjTiles.Count && !foundDamaged; i++) {
+                //                    ///Tiles t = tiles[i].gameObject.GetComponent<Tiles>();
+                //                    Tiles t = currentRoom.tilemap.GetTile<Tile>(adjTiles[i]).gameObject.GetComponent<Tiles>();
+                //                    if (t.getIsDamaged())
+                //                    {
+                //=======
+                for (int i = 0; i < adjTiles.Count && !foundDamaged; i++)
+                {
+                    Tiles t;
+                    currentRoom.tiles.TryGetValue(adjTiles[i], out t);
+                    Debug.Log(t);
+                    if (t != null && t.getIsDamaged())
+                    {
                         tools[activeTool].Use(t);
+                        foundDamaged = true;
                     }
                 }
+
             }
     }
 
+
+
     private void Move()
     {
-        Vector2 dir = new Vector2(0,0);
+        Vector2 dir = new Vector2(0, 0);
 
         if (InputManager.GetKeysInput().W)
-            dir += new Vector2(0, 1);
+            dir += Vector2.up;
 
         if (InputManager.GetKeysInput().S)
-            dir += new Vector2(0, -1);
+            dir += -Vector2.up;
 
         if (InputManager.GetKeysInput().A)
-            dir += new Vector2(-1, 0);
+            dir += Vector2.left;
 
         if (InputManager.GetKeysInput().D)
-            dir += new Vector2(1, 0);
+            dir += -Vector2.left;
 
         rb.velocity = dir * speed;
     }

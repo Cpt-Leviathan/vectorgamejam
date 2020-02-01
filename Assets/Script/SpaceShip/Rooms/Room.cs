@@ -7,7 +7,7 @@ using System.Linq;
 public class Room : MonoBehaviour
 {
     public Tilemap tilemap;
-
+    Dictionary<RequireListTool, TileBase> tbDict;
     BoundsInt bounds;
 
     public Dictionary<Vector2Int, Tiles> tiles;
@@ -15,6 +15,7 @@ public class Room : MonoBehaviour
 
     public void init()
     {
+        tiles = new Dictionary<Vector2Int, Tiles>();
         tilemap = GetComponent<Tilemap>();
         tiles = new Dictionary<Vector2Int, Tiles>();
 
@@ -32,7 +33,7 @@ public class Room : MonoBehaviour
                 if (tile != null)
                 {
                     Tiles t = new Tiles();
-                    t.init(tile);
+                    t.init(tile, this, v);
                     tiles.Add(v,t);
                 }
                 else
@@ -40,6 +41,11 @@ public class Room : MonoBehaviour
                 }
             }
         }
+
+        //tbDict.Add(RequireListTool.Hammer, Resources.Load<TileBase>("Tiles/Room_Tiles/floorTiles_crop_0"));
+       // wrenchTB = Resources.Load<TileBase>("Tiles/Room_Tiles/floorTiles_crop_0");
+       // extinTB = Resources.Load<TileBase>("Tiles/Room_Tiles/floorTiles_crop_0");
+       // welderTB = Resources.Load<TileBase>("Tiles/Room_Tiles/floorTiles_crop_0");
     }
 
     public void destroyRoom()

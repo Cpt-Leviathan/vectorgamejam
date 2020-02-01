@@ -9,14 +9,17 @@ public class Tiles
     Vector2Int pos;
     TileBase texture;
     List<RequireListTool> repairList;
+    Room parent;
 
-    public void init(TileBase tb)
+    public void init(TileBase tb, Room _parent, Vector2Int v2)
     {
         isDamaged = false;
         texture = tb;
+        pos = v2;
         repairList = new List<RequireListTool>();
+        parent = _parent;
     }
-    
+
     public void damageTile()
     {
         List<RequireListTool> tempList = RepairList.generateListOrders((int)Random.Range(0, 6));
@@ -29,18 +32,23 @@ public class Tiles
 
     public void repairTile(RequireListTool tool)
     {
-        if (repairList[0] == tool)
-        {
-            repairList.RemoveAt(0);
-            checkTile();
-        }
+        if (repairList != null)
+            if (repairList[0] == tool)
+            {
+                repairList.RemoveAt(0);
+            }
+                checkTile();
     }
 
     public void checkTile()
     {
-        if (repairList.Count > 1)
+        if (repairList.Count < 1)
         {
             isDamaged = false;
+
+            parent.tilemap.SetTile((Vector3Int)pos, texture);
+            parent.tilemap.RefreshTile((Vector3Int)pos);
+            Debug.Log("checking");
         }
     }
 

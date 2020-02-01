@@ -31,7 +31,7 @@ public class Tool
         {
             durability -= durabilityCost;
             t.repairTile(type);
-            //Debug.Log("use" + type );
+            Debug.Log("use" + type );
         }
     }
 

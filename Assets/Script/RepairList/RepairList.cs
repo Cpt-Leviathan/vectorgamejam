@@ -28,7 +28,7 @@ public static class RepairList
 
         foreach (RequireListTool toolID in toolList)
         {
-            Debug.Log("Tool ID in list : " + toolID);
+            //Debug.Log("Tool ID in list : " + toolID);
         }
         //Debug.Log("Random number :" + randomTool);
         //Debug.Log(enumLength);
