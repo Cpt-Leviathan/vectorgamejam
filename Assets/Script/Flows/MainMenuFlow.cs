@@ -15,7 +15,7 @@ public class MainMenuFlow : Flow {
     override
     public void UpdateFlow(float dt)
     {
-        Debug.Log("TEST MAINMENU");
+
     }
 
     override
