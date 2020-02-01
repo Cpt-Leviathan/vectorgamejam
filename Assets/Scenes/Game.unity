@@ -196,18 +196,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1638194359}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &314651810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 314651809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0619277ad1120d8479558db0f4090d0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &314651811
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -234,24 +222,29 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 16, y: 24}
   m_EdgeRadius: 0
+--- !u!114 &314651813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314651809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0619277ad1120d8479558db0f4090d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 0}
+  allTilesBases: []
+  allTiles: []
+  existingTilesBases: []
+  existingTiles: []
 --- !u!1 &421165098 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3733613257887115780, guid: 9179e8279d3afd748aec38da54590dd2,
     type: 3}
   m_PrefabInstance: {fileID: 1638194359}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &421165099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 421165098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0619277ad1120d8479558db0f4090d0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &421165100
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -278,6 +271,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 17, y: 13}
   m_EdgeRadius: 0
+--- !u!114 &421165102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421165098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0619277ad1120d8479558db0f4090d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 0}
+  allTilesBases: []
+  allTiles: []
+  existingTilesBases: []
+  existingTiles: []
 --- !u!1 &867656208
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,18 +603,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1638194359}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1146648108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1146648107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0619277ad1120d8479558db0f4090d0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1146648109
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -631,6 +629,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6, y: 13}
   m_EdgeRadius: 0
+--- !u!114 &1146648111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146648107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0619277ad1120d8479558db0f4090d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 0}
+  allTilesBases: []
+  allTiles: []
+  existingTilesBases: []
+  existingTiles: []
 --- !u!1 &1332891998
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,7 +797,7 @@ PrefabInstance:
     - target: {fileID: 3733613255820778180, guid: 9179e8279d3afd748aec38da54590dd2,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3733613256152335806, guid: 9179e8279d3afd748aec38da54590dd2,
         type: 3}
@@ -867,18 +882,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1638194359}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1677227908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1677227907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0619277ad1120d8479558db0f4090d0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1677227909
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -905,6 +908,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 21, y: 27}
   m_EdgeRadius: 0
+--- !u!114 &1677227911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677227907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0619277ad1120d8479558db0f4090d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 0}
+  allTilesBases: []
+  allTiles: []
+  existingTilesBases: []
+  existingTiles: []
 --- !u!1001 &1829538401
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -980,18 +1000,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1638194359}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2048393867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2048393866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0619277ad1120d8479558db0f4090d0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &2048393868
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1018,3 +1026,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 17, y: 28}
   m_EdgeRadius: 0
+--- !u!114 &2048393870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048393866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0619277ad1120d8479558db0f4090d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 0}
+  allTilesBases: []
+  allTiles: []
+  existingTilesBases: []
+  existingTiles: []

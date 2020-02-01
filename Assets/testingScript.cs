@@ -1,20 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class testingScript : MonoBehaviour
 {
+    UILink ui;
+    Image oxygen;
     List<int> testlist;
-    // Start is called before the first frame update
+
+    //UI setting
+    public float maxOxygen = 1f;
+    public float currentOxygen;
+
     void Start()
     {
+        ui = GameObject.FindGameObjectsWithTag("UILink")[0].GetComponent<UILink>();
+        oxygen = ui.oxygenImage;
         testlist = new List<int>();
-        //SoundManager.Instance.PlaySound(EnumSound.Background);
+        currentOxygen = maxOxygen;
     }
 
     // Update is called once per frame
     void Update()
     {
+        ui.oxygenImage.fillAmount -= Time.deltaTime * 0.5f;
         if (Input.GetKeyDown(KeyCode.Space))
         {
             RepairList.generateListOrders(7);
@@ -41,5 +51,6 @@ public class testingScript : MonoBehaviour
         {
             SoundManager.PlaySound(SoundManager.EnumSound.wrench);
         }
+        
     }
 }
