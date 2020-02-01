@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerManager 
 {
     private static PlayerManager instance = null;
+    private Player player;
 
     private PlayerManager()
     {
@@ -24,17 +25,18 @@ public class PlayerManager
 
     public void init()
     {
-
+        player = new Player();
+        player.InitPlayer();
 
     }
 
     public void Update() {
-
+        player.UpdatePlayer();
 
     }
 
     public void FixedUpdate() {
-
+        player.FixedUpdatePlayer();
 
     }
 
