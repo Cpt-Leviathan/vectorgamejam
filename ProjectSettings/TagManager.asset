@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - UILink
+  - cinemachine
+  - minimap
   layers:
   - Default
   - TransparentFX
