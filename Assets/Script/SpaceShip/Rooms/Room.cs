@@ -9,41 +9,55 @@ public class Room : MonoBehaviour
     List<Tiles> tileList;
 
     BoundsInt bounds;
-    public TileBase[] allTiles;
+    public TileBase[] allTilesBases;
+    public List<Tile> allTiles;
 
     public void init()
     {
         tilemap = GetComponent<Tilemap>();
+        allTiles = new List<Tile>();
+
         bounds = tilemap.cellBounds;
-        allTiles = tilemap.GetTilesBlock(bounds);
+        allTilesBases = tilemap.GetTilesBlock(bounds);
+
+        foreach (TileBase t in allTilesBases)
+        {
+            allTiles.Add((t as Tile));
+
+        }
+
         tileList = new List<Tiles>();
 
+        int i = 0;
         for (int x = 0; x < bounds.size.x; x++)
         {
             for (int y = 0; y < bounds.size.y; y++)
             {
-                TileBase tile = allTiles[x + y * bounds.size.x];
+                TileBase tile = allTilesBases[x + y * bounds.size.x];
+                Tile test = (tile as Tile);
                 if (tile != null)
                 {
                     Tiles t = new Tiles();
-                    t.init(tile);
+                    t.init(allTiles[i]);
+                    
                     //tilemap.GetTile();
                     //tilemap.Tile();
                     tileList.Add(t);
 
-                    // Debug.Log("x:" + x + " y:" + y + " tile:" + tile.name);
+                   // Debug.Log("x:" + x + " y:" + y + " tile:" + tile.name);
                 }
                 else
                 {
                     //Debug.Log("x:" + x + " y:" + y + " tile: (null)");
                 }
+                i++;
             }
         }
     }
 
     public void destroyRoom()
     {
-        int RoomsDestroyed = Random.Range(1, 5);
+        int RoomsDestroyed = Random.Range(1,5);
 
         for (int i = 0; i < RoomsDestroyed; i++)
         {
@@ -53,20 +67,15 @@ public class Room : MonoBehaviour
             }
             else
             {
-                //Debug.Log(tileList[/*RandomTile(tileList.Count-1)*/0]);
+                Debug.Log(tileList[/*RandomTile(tileList.Count-1)*/0]);
                 tileList[/*RandomTile(tileList.Count-1)*/0].damageTile();
             }
-
+            
         }
     }
 
     int RandomTile(int bound)
     {
         return (int)Random.Range(0, bound);
-    }
-
-    public Tilemap getTilemap()
-    {
-        return tilemap;
     }
 }
