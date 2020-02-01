@@ -61,3 +61,5 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 repairjam/Library/*
+Assets/Scenes/VictorScene.unity
+Assets/Scenes/VictorScene.unity.meta

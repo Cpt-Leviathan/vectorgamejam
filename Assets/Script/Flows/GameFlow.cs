@@ -11,27 +11,33 @@ public class GameFlow : Flow
     override
     public void InitializeFlow()
     {
-       
+        PlayerManager.Instance.init();
+        RoomManager.Instance.init();
+        ToolsManager.Instance.init();
+        SpaceShipManager.Instance.init();
+        UIManager.Instance.init();
     }
 
     override
     public void UpdateFlow(float dt)
     {
 
-        Debug.Log("Test");
-       
-    }
+        PlayerManager.Instance.Update();
+        RoomManager.Instance.Update();
+        ToolsManager.Instance.Update();
+        SpaceShipManager.Instance.Update();
+        UIManager.Instance.Update();
 
-
-    public void UIEndGame()
-    {
-      
     }
 
     override
     public void FixedUpdateFlow(float dt)
     {
-       
+        PlayerManager.Instance.FixedUpdate();
+        RoomManager.Instance.FixedUpdate();
+        ToolsManager.Instance.FixedUpdate();
+        SpaceShipManager.Instance.FixedUpdate();
+        UIManager.Instance.FixedUpdate();
     }
 
     override
@@ -41,11 +47,6 @@ public class GameFlow : Flow
     }
 
     public void SetPause()
-    {
-       
-    }
-
-    public void EndGame()
     {
        
     }
