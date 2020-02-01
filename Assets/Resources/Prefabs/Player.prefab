@@ -117,6 +117,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  canRefill: 0
+  gl: {fileID: 4490183744563557500, guid: 9179e8279d3afd748aec38da54590dd2, type: 3}
 --- !u!61 &2978785157012625001
 BoxCollider2D:
   m_ObjectHideFlags: 0

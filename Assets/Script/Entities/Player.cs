@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class Player : MonoBehaviour
 {
@@ -8,7 +9,10 @@ public class Player : MonoBehaviour
     private int activeTool;
     private float x, y;
     [SerializeField] private float speed;
+    public bool canRefill;
     private Rigidbody2D rb;
+
+    public GridLayout gl;
 
     public void InitPlayer()
     {
@@ -27,7 +31,7 @@ public class Player : MonoBehaviour
         tools[3].InitTool(RequireListTool.Welder, 100, 20);
 
         rb = GetComponent<Rigidbody2D>();
-
+       
     }
 
     public void UpdatePlayer()
@@ -36,9 +40,7 @@ public class Player : MonoBehaviour
 
         SwitchTool();
 
-        if (InputManager.GetKeysInput().F)
-            //print("f");
-            Interact();
+        Interact();
     }
 
     public void FixedUpdatePlayer()
@@ -48,7 +50,35 @@ public class Player : MonoBehaviour
 
     public void Interact()
     {
-        tools[activeTool].Use();
+        if (InputManager.GetKeysInput().F)
+            if (canRefill)
+                tools[activeTool].FillEnergy();
+            else
+            {
+                List<Vector3Int> adjTiles = new List<Vector3Int>();
+                RaycastHit2D hit;
+                hit = Physics2D.Raycast(transform.position, new Vector2(0, 0), Mathf.Infinity, 9);
+                Room currentRoom = hit.transform.GetComponent<Room>();
+                adjTiles.Add(currentRoom.getTilemap().WorldToCell(transform.position));
+
+                for(int y =  -1; y < 2; y++)
+                {
+                    for(int x = -1; x < 2; x++)
+                    {
+                        adjTiles.Add(new Vector3Int(x, y, 0));
+                    }
+                }
+
+                TileBase[] tiles = currentRoom.allTiles;
+                foreach(TileBase t in tiles)
+                {
+                    if (currentRoom.getTilemap().GetTile(adjTiles[0]) == t){
+                        Debug.Log("tile trouver");
+                    }
+                }
+
+                tools[activeTool].Use();
+            }
     }
 
     private void Move()

@@ -9,12 +9,11 @@ public class Room : MonoBehaviour
     List<Tile> tileList;
 
     BoundsInt bounds;
-    TileBase[] allTiles;
+    public TileBase[] allTiles;
 
     public void init()
     {
         tilemap = GetComponent<Tilemap>();
-
         bounds = tilemap.cellBounds;
         allTiles = tilemap.GetTilesBlock(bounds);
         tileList = new List<Tile>();
@@ -30,7 +29,7 @@ public class Room : MonoBehaviour
                     t.init(tile);
                     tileList.Add(t);
 
-                   // Debug.Log("x:" + x + " y:" + y + " tile:" + tile.name);
+                    // Debug.Log("x:" + x + " y:" + y + " tile:" + tile.name);
                 }
                 else
                 {
@@ -42,7 +41,7 @@ public class Room : MonoBehaviour
 
     public void destroyRoom()
     {
-        int RoomsDestroyed = Random.Range(1,5);
+        int RoomsDestroyed = Random.Range(1, 5);
 
         for (int i = 0; i < RoomsDestroyed; i++)
         {
@@ -55,12 +54,17 @@ public class Room : MonoBehaviour
                 Debug.Log(tileList[/*RandomTile(tileList.Count-1)*/0]);
                 tileList[/*RandomTile(tileList.Count-1)*/0].damageTile();
             }
-            
+
         }
     }
 
     int RandomTile(int bound)
     {
         return (int)Random.Range(0, bound);
+    }
+
+    public Tilemap getTilemap()
+    {
+        return tilemap;
     }
 }
