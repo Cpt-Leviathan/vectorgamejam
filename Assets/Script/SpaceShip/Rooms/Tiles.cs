@@ -6,10 +6,10 @@ using UnityEngine.Tilemaps;
 public class Tiles
 {
     bool isDamaged;
-    TileBase tile;
+    Tile tile;
     List<RequireListTool> repairList;
 
-    public void init(TileBase tileMapTile)
+    public void init(Tile tileMapTile)
     {
         isDamaged = false;
         tile = tileMapTile;
