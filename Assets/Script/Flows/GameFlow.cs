@@ -12,7 +12,6 @@ public class GameFlow : Flow
     public void InitializeFlow()
     {
         PlayerManager.Instance.init();
-        RoomManager.Instance.init();
         ToolsManager.Instance.init();
         SpaceShipManager.Instance.init();
         UIManager.Instance.init();
@@ -23,7 +22,6 @@ public class GameFlow : Flow
     {
 
         PlayerManager.Instance.Update();
-        RoomManager.Instance.Update();
         ToolsManager.Instance.Update();
         SpaceShipManager.Instance.Update();
         UIManager.Instance.Update();
@@ -34,7 +32,6 @@ public class GameFlow : Flow
     public void FixedUpdateFlow(float dt)
     {
         PlayerManager.Instance.FixedUpdate();
-        RoomManager.Instance.FixedUpdate();
         ToolsManager.Instance.FixedUpdate();
         SpaceShipManager.Instance.FixedUpdate();
         UIManager.Instance.FixedUpdate();
