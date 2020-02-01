@@ -30,7 +30,8 @@ public class Tool
         if (durability > 0)
         {
             durability -= durabilityCost;
-            Debug.Log("use" + type );
+            t.repairTile(type);
+            //Debug.Log("use" + type );
         }
     }
 
