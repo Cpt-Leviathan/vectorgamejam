@@ -69,13 +69,14 @@ public class Player : MonoBehaviour
                         adjTiles.Add(new Vector3Int(currentRoom.tilemap.WorldToCell(transform.position).x + x, currentRoom.tilemap.WorldToCell(transform.position).y + y, 0));
                     }
                 }
-
-                List<Tile> tiles  = currentRoom.existingTiles;
+                
+                //List<Tile> tiles  = currentRoom.existingTiles;
                 bool foundDamaged = false;
-                for(int i = 0; i < tiles.Count && !foundDamaged; i++) {
-                    Tiles t = tiles[i].gameObject.GetComponent<Tiles>();
-
-                    if (t.getIsDamaged()){
+                for(int i = 0; i < adjTiles.Count && !foundDamaged; i++) {
+                    ///Tiles t = tiles[i].gameObject.GetComponent<Tiles>();
+                    Tiles t = currentRoom.tilemap.GetTile<Tile>(adjTiles[i]).gameObject.GetComponent<Tiles>();
+                    if (t.getIsDamaged())
+                    {
                         foundDamaged = true;
                         tools[activeTool].Use(t);
                     }
