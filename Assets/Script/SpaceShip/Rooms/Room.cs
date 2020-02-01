@@ -53,7 +53,7 @@ public class Room : MonoBehaviour
             }
             else
             {
-                Debug.Log(tileList[/*RandomTile(tileList.Count-1)*/0]);
+                //Debug.Log(tileList[/*RandomTile(tileList.Count-1)*/0]);
                 tileList[/*RandomTile(tileList.Count-1)*/0].damageTile();
             }
 
