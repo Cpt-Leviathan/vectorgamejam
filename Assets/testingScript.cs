@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class testingScript : MonoBehaviour
 {
     UILink ui;
+    UIGame uiGame;
     Image oxygen;
     List<int> testlist;
 
@@ -16,6 +17,9 @@ public class testingScript : MonoBehaviour
     void Start()
     {
         ui = GameObject.FindGameObjectsWithTag("UILink")[0].GetComponent<UILink>();
+        uiGame = new UIGame();
+        uiGame.Init();
+
         oxygen = ui.oxygenImage;
         testlist = new List<int>();
         currentOxygen = maxOxygen;
@@ -51,6 +55,26 @@ public class testingScript : MonoBehaviour
         {
             SoundManager.PlaySound(SoundManager.EnumSound.wrench);
         }
-        
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            uiGame.SetHighLigthActive(RequireListTool.Extincteur);
+            Debug.Log("im press?");
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            uiGame.SetHighLigthActive(RequireListTool.Hammer);
+            Debug.Log("im press?");
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            uiGame.SetHighLigthActive(RequireListTool.Welder);
+            Debug.Log("im press?");
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            uiGame.SetHighLigthActive(RequireListTool.Wrench);
+            Debug.Log("im press?");
+        }
+
     }
 }
