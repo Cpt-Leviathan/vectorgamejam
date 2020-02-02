@@ -8,6 +8,7 @@ TagManager:
   - UILink
   - cinemachine
   - minimap
+  - caller
   layers:
   - Default
   - TransparentFX
