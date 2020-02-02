@@ -26,7 +26,7 @@ public class FlowManager
     }
     #endregion
     public SceneNames currentScene;
-    Flow currentFlow;
+    public Flow currentFlow;
     bool flowInitialized = false;
 
 
@@ -107,4 +107,6 @@ public class FlowManager
     {
         return currentFlow;
     }
+
+    
 }
