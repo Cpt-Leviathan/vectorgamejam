@@ -25,11 +25,18 @@ public class CallerManager
 
     public void init()
     {
-        caller.Init();
+        GameObject go = GameObject.Find("New Sprite");
+        caller = go.GetComponent<Caller>();
+        if (caller != null)
+        {
+            caller.Init();
+            caller.gameObject.SetActive(false);
+        }
     }
-
+    
     public void Update()
     {
-        caller.updateCaller();
+        if(caller != null)
+            caller.updateCaller();
     }
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Caller : MonoBehaviour
 {
-    GameObject module;
     float lastCallTime, nextCallTime, callTimer;
     float minTimer, maxTimer;
     float timeUntilEnd, endTime, endTimer;
@@ -16,28 +15,31 @@ public class Caller : MonoBehaviour
         endTime = 12;
         lastCallTime = 0;
         callTimer = 0;
+        endTimer = 0;
         nextCallTime = Random.Range(minTimer, maxTimer);
 
-        module.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     public void updateCaller()
     {
-        if (!module.activeSelf)
+        if (!gameObject.activeSelf)
         {
             callTimer += Time.deltaTime;
             if (lastCallTime + callTimer >= nextCallTime)
             {
-                module.SetActive(true);
+                callTimer = 0;
+                gameObject.SetActive(true);
                 lastCallTime = Time.time;
-                timeUntilEnd = lastCallTime;
+                timeUntilEnd = lastCallTime + endTime;
+                nextCallTime = Random.Range(minTimer, maxTimer);
             }
         }
 
-        if (module.activeSelf)
+        if (gameObject.activeSelf)
         {
             endTimer += Time.deltaTime;
-            if (timeUntilEnd + endTimer >= endTime)
+            if (lastCallTime + endTimer >= timeUntilEnd)
             {
                 GameFlow gameFlow = (GameFlow)FlowManager.Instance.currentFlow;
                 gameFlow.EndGame();
@@ -62,6 +64,6 @@ public class Caller : MonoBehaviour
 
     public void Hangup()
     {
-        module.SetActive(false);
+        gameObject.SetActive(false);
     }
 }
