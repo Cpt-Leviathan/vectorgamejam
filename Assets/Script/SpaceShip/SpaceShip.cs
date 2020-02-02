@@ -60,9 +60,10 @@ public class SpaceShip
             modifier = Random.Range(minTime, maxTime);
             nextTime = Time.time + modifier;
         }
-
+        Debug.Log("Oxygene: "+oxygene);
+        Debug.Log("OxygeneLostSecondes: " + oxygeneLostPerSeconds);
         if (Time.time > oxygeneTime && oxygeneLostPerSeconds > 0) {
-
+            
             oxygene -= oxygeneLostPerSeconds;
 
             oxygeneTime = Time.time + oxygeneSeconds;
@@ -80,7 +81,7 @@ public class SpaceShip
 
     public void AddOxygene(float lvl) {
 
-        oxygene = +lvl;
+        oxygene += lvl;
 
         if (oxygene > 100)
             oxygene = 100;

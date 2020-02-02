@@ -61,7 +61,6 @@ public class Room : MonoBehaviour
             
                 Vector2Int v2 = tiles.Keys.ToList()[RandomTile(tiles.Count - 1)];
                 tiles[v2].damageTile();
-                Debug.Log(tiles[v2].repairList[0]);
                 TileBase tb = Resources.Load<TileBase>("Tiles/tool_tiles/Tile_" + tiles[v2].repairList[0]);
                 
                 tilemap.SetTile((Vector3Int)v2, tb);

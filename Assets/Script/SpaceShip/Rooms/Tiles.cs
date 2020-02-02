@@ -51,7 +51,6 @@ public class Tiles
             SpaceShipManager.Instance.krina.AddOxygene(2);
             parent.tilemap.SetTile((Vector3Int)pos, texture);
             parent.tilemap.RefreshTile((Vector3Int)pos);
-            Debug.Log("checking");
         }
     }
 

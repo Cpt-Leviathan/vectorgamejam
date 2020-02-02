@@ -32,13 +32,13 @@ public class UIGame
 
     public void SetHighLigthActive(RequireListTool toolID)
     {
-        Debug.Log(toolList.Count);
+
         for (int i = 0; i < toolList.Count; i++)
         {
             toolList[i].color = Color.black;
         }
         toolList[(int)toolID].color = Color.green;
-        Debug.Log("number: " + (int)toolID);
+
     }
 
     public void Oxygene(float oxylvl) {
@@ -50,5 +50,18 @@ public class UIGame
     {
         ui.endgame.SetActive(true);
     }
+
+    public void changeFuelExtincteur(float fuel) {
+
+        ui.fuelExtin.fillAmount = fuel / 100;
+
+    }
+
+
+    public void changeFuelWelder(float fuel)
+    {
+        ui.fuelWelder.fillAmount = fuel / 100;
+    }
+
 
 }
