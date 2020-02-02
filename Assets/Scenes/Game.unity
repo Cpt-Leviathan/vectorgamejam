@@ -480,6 +480,24 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2058796182896304512, guid: 10f8894ea3de7fe468cb12b92fa418c8,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 55c0bf066aa3cd64e95f62ba3eed74ff,
+        type: 3}
+    - target: {fileID: 3384538144137941203, guid: 10f8894ea3de7fe468cb12b92fa418c8,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 418da0c96038b454daffe9b5555d64f5,
+        type: 3}
+    - target: {fileID: 4491355654572816725, guid: 10f8894ea3de7fe468cb12b92fa418c8,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 18653f251ce7f6446ae136d394a308ae,
+        type: 3}
     - target: {fileID: 5592169925677790683, guid: 10f8894ea3de7fe468cb12b92fa418c8,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -559,6 +577,32 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.10349107
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592169926483208069, guid: 10f8894ea3de7fe468cb12b92fa418c8,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592169926483208069, guid: 10f8894ea3de7fe468cb12b92fa418c8,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592169926483208071, guid: 10f8894ea3de7fe468cb12b92fa418c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137656503870091101, guid: 10f8894ea3de7fe468cb12b92fa418c8,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5d0596bd483252a46bcf285338d50790,
+        type: 3}
+    - target: {fileID: 8532012214947903891, guid: 10f8894ea3de7fe468cb12b92fa418c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10f8894ea3de7fe468cb12b92fa418c8, type: 3}
