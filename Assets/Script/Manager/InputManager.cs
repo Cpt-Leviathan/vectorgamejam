@@ -15,10 +15,10 @@ public class InputManager
         toRet.D = Input.GetKey(KeyCode.D);
         toRet.W = Input.GetKey(KeyCode.W);
         toRet.F = Input.GetKeyDown(KeyCode.F);
-        toRet.tool1Pressed = Input.GetKey(KeyCode.Alpha1);
-        toRet.tool2Pressed = Input.GetKey(KeyCode.Alpha2);
-        toRet.tool3Pressed = Input.GetKey(KeyCode.Alpha3);
-        toRet.tool4Pressed = Input.GetKey(KeyCode.Alpha4);
+        toRet.tool1Pressed = Input.GetKeyDown(KeyCode.Alpha1);
+        toRet.tool2Pressed = Input.GetKeyDown(KeyCode.Alpha2);
+        toRet.tool3Pressed = Input.GetKeyDown(KeyCode.Alpha3);
+        toRet.tool4Pressed = Input.GetKeyDown(KeyCode.Alpha4);
 
         return toRet;
         }

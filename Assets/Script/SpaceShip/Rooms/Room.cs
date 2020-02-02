@@ -64,8 +64,10 @@ public class Room : MonoBehaviour
                 TileBase tb = Resources.Load<TileBase>("Tiles/Room_Tiles/floorTiles_crop_0");
                 tilemap.SetTile((Vector3Int)v2, tb);
                 tilemap.RefreshTile((Vector3Int)v2);
+              
             }
         }
+        SoundManager.PlaySound(SoundManager.EnumSound.spaceHit);
     }
 
     int RandomTile(int bound)
