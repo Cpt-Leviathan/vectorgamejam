@@ -58,7 +58,8 @@ public class Room : MonoBehaviour
         {
             if (tiles.Keys.Count > 0)
             {
-            
+                SpaceShipManager.Instance.krina.AddOxygeneLost();
+
                 Vector2Int v2 = tiles.Keys.ToList()[RandomTile(tiles.Count - 1)];
                 tiles[v2].damageTile();
                 TileBase tb = Resources.Load<TileBase>("Tiles/tool_tiles/Tile_" + tiles[v2].repairList[0]);

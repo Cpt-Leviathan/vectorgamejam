@@ -8,7 +8,7 @@ public class SpaceShip
     float oxygeneLostPerSeconds = 0;
     float oxygene = 100;
     float oxygeneSeconds = 1;
-    float oxygeneTime;
+    float oxygeneTime = 0;
     List<Room> mySpaceShip;
     float nextTime;
     float modifier;
@@ -42,10 +42,7 @@ public class SpaceShip
         if (mySpaceShip.Count > 0)
         {
             if (Time.time > nextTime)
-            { int random = Random.Range(0, mySpaceShip.Count);
-
-                oxygeneLostPerSeconds += random * OXYGENELOST;
-
+            { int random = Random.Range(0, mySpaceShip.Count);     
                 mySpaceShip[random].destroyRoom();
                 modifier = Random.Range(minTime, maxTime);
                 nextTime = Time.time + modifier;
@@ -54,16 +51,17 @@ public class SpaceShip
 
         if (Input.GetKeyDown(KeyCode.Space)) {
             int random = Random.Range(0, mySpaceShip.Count);
-            oxygeneLostPerSeconds += random * OXYGENELOST;
-
             mySpaceShip[random].destroyRoom();
             modifier = Random.Range(minTime, maxTime);
             nextTime = Time.time + modifier;
         }
+
+
         Debug.Log("Oxygene: "+oxygene);
         Debug.Log("OxygeneLostSecondes: " + oxygeneLostPerSeconds);
-        if (Time.time > oxygeneTime && oxygeneLostPerSeconds > 0) {
-            
+
+        if (Time.time > oxygeneTime && oxygeneLostPerSeconds > 0) {    
+
             oxygene -= oxygeneLostPerSeconds;
 
             oxygeneTime = Time.time + oxygeneSeconds;
@@ -72,6 +70,10 @@ public class SpaceShip
 
         }
 
+    }
+
+    public void AddOxygeneLost() {
+        oxygeneLostPerSeconds +=  OXYGENELOST;
     }
 
     public void RemoveOxygeneLost()
