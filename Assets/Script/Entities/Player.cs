@@ -91,7 +91,7 @@ public class Player : MonoBehaviour
                 {
                     Tiles t;
                     currentRoom.tiles.TryGetValue(adjTiles[i], out t);
-                    Debug.Log(t);
+                    //Debug.Log(t);
                     if (t != null && t.getIsDamaged())
                     {
                         tools[activeTool].Use(t);

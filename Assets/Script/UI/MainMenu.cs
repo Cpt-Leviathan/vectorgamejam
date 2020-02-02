@@ -13,7 +13,10 @@ public class MainMenu : MonoBehaviour
         //Debug.Log("play");
     }
 
-
+    public void ReturnMenu()
+    {
+        FlowManager.Instance.ChangeFlows(FlowManager.SceneNames.MainMenu);
+    }
 
     public void QuitGame()
     {
