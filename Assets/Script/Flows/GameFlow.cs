@@ -13,6 +13,7 @@ public class GameFlow : Flow
         PlayerManager.Instance.init();
         ToolsManager.Instance.init();
         SpaceShipManager.Instance.init();
+        SoundManager.Initialize();
         UIManager.Instance.init();
     }
 

@@ -18,18 +18,8 @@ public class GameAssets : MonoBehaviour
         }
     }
 
-    public AudioClip spaceHit;
-    public AudioClip extincteur;
-    public AudioClip hammer;
-    public AudioClip menuSelectionSound;
-    public AudioClip welder;
-    public AudioClip wrench;
-    public AudioClip ligthYearBackground;
-    public AudioClip securityBreachBackground;
-    public AudioClip blazingStartBackground;
-
     public SoundAudioClip[] soundAudioClipArray;
-
+    
     [System.Serializable]
     public class SoundAudioClip
     {
