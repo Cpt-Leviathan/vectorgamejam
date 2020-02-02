@@ -55,4 +55,13 @@ public class UIManager
     {
         uigame.EndGame();
     }
+
+    public void changeFuelWelder(float fuel)
+    {
+        uigame.changeFuelWelder(fuel);
+    }
+    public void changeFuelExtincteur(float fuel)
+    {
+        uigame.changeFuelExtincteur(fuel);
+    }
 }

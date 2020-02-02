@@ -58,7 +58,7 @@ public class SoundManager
     {
         if (CanPlaySound(sound))
         {
-
+            oneShotAudioSource.Stop();
             if (sound == EnumSound.PlayerMove)
             {
                 oneShotAudioSource.loop = true;

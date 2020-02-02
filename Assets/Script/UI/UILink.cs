@@ -10,5 +10,7 @@ public class UILink : MonoBehaviour
     public Image tool2;
     public Image tool3;
     public Image tool4;
+    public Image fuelExtin;
+    public Image fuelWelder;
     public GameObject endgame;
 }
