@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private Collider2D collider;
     GameObject cinemachine;
-    GameObject minMap;
+
 
     public GridLayout gl;
 
@@ -23,8 +23,7 @@ public class Player : MonoBehaviour
         //speed = 2;
 
         cinemachine = GameObject.Instantiate(Resources.Load("Prefabs/CM vcam2", typeof(GameObject))) as GameObject;
-        minMap = GameObject.Instantiate(Resources.Load("Prefabs/MiniMap", typeof(GameObject))) as GameObject;
-        collider = GetComponent<Collider2D>();
+
         activeTool = 0;
        
         tools = new List<Tool>();
@@ -48,9 +47,6 @@ public class Player : MonoBehaviour
 
         Vector3 temp = new Vector3(transform.position.x, transform.position.y, -12);
         cinemachine.transform.position = temp;
-
-        Vector3 temp2 = new Vector3(transform.position.x, transform.position.y, -35);
-        minMap.transform.position = temp2;
 
 
 
@@ -145,6 +141,14 @@ public class Player : MonoBehaviour
             soundStarted = true;
             SoundManager.PlaySound(SoundManager.EnumSound.PlayerMove);
 
+        }
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+
+           
+            GameObject go = GameObject.Instantiate(Resources.Load("Prefabs/Spark_Particle"), transform.position, Quaternion.identity)as GameObject;
+            GameObject.Destroy(go, 10);
         }
 
         InputManager.InputPkg pkg = InputManager.GetKeysInput();

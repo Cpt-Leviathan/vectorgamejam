@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3053245143236086235}
   m_Layer: 0
   m_Name: UILink
-  m_TagString: Untagged
+  m_TagString: UILink
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,3 +48,6 @@ MonoBehaviour:
   tool2: {fileID: 0}
   tool3: {fileID: 0}
   tool4: {fileID: 0}
+  fuelExtin: {fileID: 0}
+  fuelWelder: {fileID: 0}
+  endgame: {fileID: 0}

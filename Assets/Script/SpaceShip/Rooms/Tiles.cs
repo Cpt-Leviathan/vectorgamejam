@@ -10,6 +10,7 @@ public class Tiles
     TileBase texture;
     public List<RequireListTool> repairList;
     Room parent;
+    GameObject particleEffects;
 
     public void init(TileBase tb, Room _parent, Vector2Int v2)
     {
@@ -39,8 +40,26 @@ public class Tiles
                 repairList.RemoveAt(0);
                 parent.tilemap.SetTile((Vector3Int)pos, Resources.Load<TileBase>("Tiles/tool_tiles/Tile_" + repairList[0]));
                 parent.tilemap.RefreshTile((Vector3Int)pos);
+
+                switch (tool)
+                {
+                    case RequireListTool.Hammer:
+                        
+                        GameObject go = GameObject.Instantiate(Resources.Load("Prefabs/Spark_Particle"), parent.tilemap.CellToWorld((Vector3Int)pos), Quaternion.identity) as GameObject;
+                        GameObject.Destroy(go, 10);
+
+                        break;
+                    case RequireListTool.Extincteur:
+                        break;
+                    case RequireListTool.Welder:
+                        break;
+                    case RequireListTool.Wrench:
+                        break;
+                    default:
+                        break;
+                }
             }
-                checkTile();
+        checkTile();
     }
 
     public void checkTile()
@@ -51,7 +70,6 @@ public class Tiles
             SpaceShipManager.Instance.krina.AddOxygene(2);
             parent.tilemap.SetTile((Vector3Int)pos, texture);
             parent.tilemap.RefreshTile((Vector3Int)pos);
-            Debug.Log("checking");
         }
     }
 

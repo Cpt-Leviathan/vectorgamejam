@@ -27,13 +27,33 @@ public class Tool
         {
             durability -= durabilityCost;
             t.repairTile(type);
-            Debug.Log("use" + type );
+            updateUI();
+
         }
     }
+
+    void updateUI()
+    {
+        if (type == RequireListTool.Extincteur)
+        {
+            UIManager.Instance.changeFuelExtincteur(durability);
+
+        }
+        else if (type == RequireListTool.Welder)
+        {
+            UIManager.Instance.changeFuelWelder(durability);
+
+        }
+
+
+    }
+
+
 
     public void FillEnergy()
     {
         Debug.Log("Refilling.....");
         durability = durabilityMax;
+        updateUI();
     }
 }
