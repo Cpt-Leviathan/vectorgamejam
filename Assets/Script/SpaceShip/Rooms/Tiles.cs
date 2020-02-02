@@ -32,7 +32,7 @@ public class Tiles
 
     public void repairTile(RequireListTool tool)
     {
-        if (repairList != null)
+        if (repairList.Count > 0)
             if (repairList[0] == tool)
             {
                 repairList.RemoveAt(0);
