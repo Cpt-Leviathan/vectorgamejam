@@ -52,7 +52,7 @@ public class SpaceShip
             }
         }
 
-        if (Input.GetKey(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.Space)) {
             int random = Random.Range(0, mySpaceShip.Count);
             oxygeneLostPerSeconds += random * OXYGENELOST;
 

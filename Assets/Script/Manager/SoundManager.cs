@@ -39,8 +39,15 @@ public class SoundManager
     private static Dictionary<EnumSound, float> soundTimerDictionary;
     private static GameObject oneShotGameObject;
     private static AudioSource oneShotAudioSource;
+
     public static void Initialize()
     {
+        oneShotGameObject = new GameObject("One shot sound");
+        oneShotAudioSource = oneShotGameObject.AddComponent<AudioSource>();
+        oneShotAudioSource.volume = 0.5f;
+
+        oneShotAudioSource.loop = false;
+
         soundTimerDictionary = new Dictionary<EnumSound, float>();
         soundTimerDictionary[EnumSound.PlayerMove] = 2f;
     }
@@ -51,16 +58,25 @@ public class SoundManager
     {
         if (CanPlaySound(sound))
         {
-            if (oneShotGameObject == null)
+
+            if (sound == EnumSound.PlayerMove)
             {
-                oneShotGameObject = new GameObject("One shot sound");
-                oneShotAudioSource = oneShotGameObject.AddComponent<AudioSource>();
+                oneShotAudioSource.loop = true;
+            }
+            else {
+
                 oneShotAudioSource.loop = false;
             }
-
             oneShotAudioSource.PlayOneShot(GetAudioClip(sound));
         }
     }
+
+    public static void StopSound()
+    {
+        oneShotAudioSource.Stop();
+
+    }
+
     //this is a 3d sound
     public static void PlaySound(EnumSound sound, Vector3 position)
     {

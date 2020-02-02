@@ -102,7 +102,8 @@ public class Player : MonoBehaviour
             }
     }
 
-
+    bool isMoving = false;
+    bool soundStarted = false;
 
     private void Move()
     {
@@ -111,25 +112,45 @@ public class Player : MonoBehaviour
         if (InputManager.GetKeysInput().W) {
             transform.localEulerAngles = new Vector3(0, 0, 0);
             dir += new Vector2(0, 1);
-            //SoundManager.PlaySound(SoundManager.EnumSound.PlayerMove);
+            isMoving = true;
+           
         }
         if (InputManager.GetKeysInput().S) {
             transform.localEulerAngles = new Vector3(0, 0, 180);
             dir += new Vector2(0, -1);
-           // SoundManager.PlaySound(SoundManager.EnumSound.PlayerMove);
+            isMoving = true;
+           
         }
 
         if (InputManager.GetKeysInput().A) {
             transform.localEulerAngles = new Vector3(0, 0, 90);
             dir += new Vector2(-1, 0);
-           // SoundManager.PlaySound(SoundManager.EnumSound.PlayerMove);
+            isMoving = true;
+          
         }
 
         if (InputManager.GetKeysInput().D) {
             transform.localEulerAngles = new Vector3(0, 0, -90);
             dir += new Vector2(1, 0);
-            //SoundManager.PlaySound(SoundManager.EnumSound.PlayerMove);
+            isMoving = true;
+          
         }
+        if (isMoving && !soundStarted)
+        {
+            soundStarted = true;
+            SoundManager.PlaySound(SoundManager.EnumSound.PlayerMove);
+
+        }
+
+        InputManager.InputPkg pkg = InputManager.GetKeysInput();
+
+        if (!pkg.A && !pkg.D && !pkg.S && !pkg.W) {
+
+            isMoving = false;
+            soundStarted = false;
+            SoundManager.StopSound();
+        }
+        
         
         rb.velocity = dir * speed;
     }
