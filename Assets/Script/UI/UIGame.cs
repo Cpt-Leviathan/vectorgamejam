@@ -16,7 +16,7 @@ public class UIGame
     public void Init()
     {
         toolList = new List<Image>();
-        ui = GameObject.FindGameObjectsWithTag("UILink")[0].GetComponent<UILink>();
+        ui = GameObject.FindGameObjectWithTag("UILink").GetComponent<UILink>();
         //asigne all image with is ui element
         toolBox1 = ui.tool1;
         toolBox2 = ui.tool2;

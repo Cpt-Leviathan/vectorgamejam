@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
         minMap = GameObject.Instantiate(Resources.Load("Prefabs/MiniMap", typeof(GameObject))) as GameObject;
 
         activeTool = 0;
+       
         tools = new List<Tool>();
         for (int i = 0; i < 4; i++)
         {
@@ -128,56 +129,34 @@ public class Player : MonoBehaviour
 
         rb.velocity = dir * speed;
     }
-
-    private void RotatePlayer()
-    {
-        //left
-        if (Input.GetAxis("Horizontal") > 0) {
-            //transform.rotation = new Quaternion(0,-90,0,0);
-            transform.eulerAngles = new Vector2(0, -90);
-            //new Quaternion(0,90,0,0
-        }
-        //right
-        if (Input.GetAxis("Horizontal") > 0) {
-            //transform.rotation = new Quaternion(0, 90, 0, 0);
-            transform.eulerAngles = new Vector2(0, 90);
-
-        }
-        //down
-        if (Input.GetAxis("Vertical") < 0) {
-            //transform.rotation = new Quaternion(0, 180, 0, 0);
-            transform.eulerAngles = new Vector2(0, 180);
-
-        }
-        //up
-        if (Input.GetAxis("Vertical") > 0) {
-            //transform.rotation = new Quaternion(0, 0, 0, 0);
-            transform.eulerAngles = new Vector3(0, 0, 0);
-
-        }
-    }
+    
 
     private void SwitchTool()
     {
         if (InputManager.GetKeysInput().tool1Pressed)
         {
+           
             print("Hammer");
             activeTool = 0;
+            UIManager.Instance.ChangeActiveTools((RequireListTool)activeTool);
         }
         if (InputManager.GetKeysInput().tool2Pressed)
         {
             print("Wrench");
             activeTool = 1;
+            UIManager.Instance.ChangeActiveTools((RequireListTool)activeTool);
         }
         if (InputManager.GetKeysInput().tool3Pressed)
         {
             print("Extincteur");
             activeTool = 2;
+            UIManager.Instance.ChangeActiveTools((RequireListTool)activeTool);
         }
         if (InputManager.GetKeysInput().tool4Pressed)
         {
             print("Welder");
             activeTool = 3;
+            UIManager.Instance.ChangeActiveTools((RequireListTool)activeTool);
         }
     }
 }
