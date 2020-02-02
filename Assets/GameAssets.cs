@@ -17,6 +17,7 @@ public class GameAssets : MonoBehaviour
             return _i;
         }
     }
+
     public AudioClip spaceHit;
     public AudioClip extincteur;
     public AudioClip hammer;

@@ -34,6 +34,7 @@ public class SoundManager
         PlayerMove,
     }
 
+    //use to play sound after amount a time
     private static Dictionary<EnumSound, float> soundTimerDictionary;
     private static GameObject oneShotGameObject;
     private static AudioSource oneShotAudioSource;
@@ -44,6 +45,7 @@ public class SoundManager
     }
 
 
+    //playsound without time
     public static void PlaySound(EnumSound sound)
     {
         if (CanPlaySound(sound))
@@ -75,6 +77,7 @@ public class SoundManager
             Object.Destroy(soundGameObject, audioSource.clip.length);
         }
     }
+
 
     private static bool CanPlaySound(EnumSound sound)
     {

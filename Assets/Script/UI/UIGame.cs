@@ -17,10 +17,13 @@ public class UIGame
     {
         toolList = new List<Image>();
         ui = GameObject.FindGameObjectsWithTag("UILink")[0].GetComponent<UILink>();
+        //asigne all image with is ui element
         toolBox1 = ui.tool1;
         toolBox2 = ui.tool2;
         toolBox3 = ui.tool3;
         toolBox4 = ui.tool4;
+
+        //add all image to list
         toolList.Add(toolBox1);
         toolList.Add(toolBox2);
         toolList.Add(toolBox3);
@@ -36,47 +39,6 @@ public class UIGame
         }
         toolList[(int)toolID].color = Color.green;
         Debug.Log("number: " + (int)toolID);
-        /*switch (toolID)
-        {
-            case RequireListTool.Extincteur:
-                if (isSelected)
-                {
-                    toolBox1.color = Color.green;
-                    isSelected = true;
-                }
-                break;
-            case RequireListTool.Hammer:
-                if (isSelected)
-                {
-                    toolBox2.color = Color.green;
-                    isSelected = true;
-                }
-                break;
-            case RequireListTool.Welder:
-                if (isSelected)
-                {
-                    toolBox3.color = Color.green;
-                    isSelected = true;
-                }
-                break;
-            case RequireListTool.Wrench:
-                if (isSelected)
-                {
-                    toolBox4.color = Color.green;
-                    isSelected = true;
-                }
-                break;
-            default:
-                if (!isSelected)
-                {
-                    toolBox1.color = Color.black;
-                    toolBox2.color = Color.black;
-                    toolBox3.color = Color.black;
-                    toolBox4.color = Color.black;
-                }
-
-                break;
-        }*/
     }
 
 }

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIManager 
+public class UIManager
 {
 
     private static UIManager instance = null;
-
+    UIGame uigame;
     private UIManager()
     {
     }
@@ -25,13 +25,13 @@ public class UIManager
 
     public void init()
     {
-
+        uigame = new UIGame();
+        uigame.Init();
 
     }
 
     public void Update()
     {
-
 
     }
 
@@ -39,5 +39,10 @@ public class UIManager
     {
 
 
+    }
+
+    public void ChangeActiveTools(RequireListTool toolID)
+    {
+        uigame.SetHighLigthActive(toolID);
     }
 }
