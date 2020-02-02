@@ -12,7 +12,7 @@ public class Caller : MonoBehaviour
     {
         minTimer = 20;
         maxTimer = 60;
-        endTime = 12;
+        endTime = 30;
         lastCallTime = 0;
         callTimer = 0;
         endTimer = 0;
@@ -41,6 +41,8 @@ public class Caller : MonoBehaviour
             endTimer += Time.deltaTime;
             if (lastCallTime + endTimer >= timeUntilEnd)
             {
+                endTimer = 0;
+                lastCallTime = Time.time;
                 GameFlow gameFlow = (GameFlow)FlowManager.Instance.currentFlow;
                 gameFlow.EndGame();
             }
@@ -65,5 +67,6 @@ public class Caller : MonoBehaviour
     public void Hangup()
     {
         gameObject.SetActive(false);
+        endTimer = 0;
     }
 }
