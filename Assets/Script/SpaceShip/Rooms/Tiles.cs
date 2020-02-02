@@ -23,7 +23,7 @@ public class Tiles
 
     public void damageTile()
     {
-        List<RequireListTool> tempList = RepairList.generateListOrders((int)Random.Range(0, 6));
+        List<RequireListTool> tempList = RepairList.generateListOrders((int)Random.Range(1, 4));
         foreach (RequireListTool rlt in tempList)
         {
             repairList.Add(rlt);
@@ -38,8 +38,17 @@ public class Tiles
             {
                 SpaceShipManager.Instance.krina.RemoveOxygeneLost();
                 repairList.RemoveAt(0);
-                parent.tilemap.SetTile((Vector3Int)pos, Resources.Load<TileBase>("Tiles/tool_tiles/Tile_" + repairList[0]));
-                parent.tilemap.RefreshTile((Vector3Int)pos);
+                if (repairList.Count > 0)
+                {
+                    parent.tilemap.SetTile((Vector3Int)pos, Resources.Load<TileBase>("Tiles/tool_tiles/Tile_" + repairList[0]));
+                    parent.tilemap.RefreshTile((Vector3Int)pos);
+                }
+                else
+                {
+                    parent.tilemap.SetTile((Vector3Int)pos, texture);
+                    parent.tilemap.RefreshTile((Vector3Int)pos);
+                }
+                
 
                 switch (tool)
                 {
