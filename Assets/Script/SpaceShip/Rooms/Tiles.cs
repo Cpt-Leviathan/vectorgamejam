@@ -8,7 +8,7 @@ public class Tiles
     bool isDamaged;
     Vector2Int pos;
     TileBase texture;
-    List<RequireListTool> repairList;
+    public List<RequireListTool> repairList;
     Room parent;
 
     public void init(TileBase tb, Room _parent, Vector2Int v2)
@@ -37,6 +37,8 @@ public class Tiles
             {
                 SpaceShipManager.Instance.krina.RemoveOxygeneLost();
                 repairList.RemoveAt(0);
+                parent.tilemap.SetTile((Vector3Int)pos, Resources.Load<TileBase>("Tiles/tool_tiles/Tile_" + repairList[0]));
+                parent.tilemap.RefreshTile((Vector3Int)pos);
             }
                 checkTile();
     }
