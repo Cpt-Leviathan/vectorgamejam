@@ -46,14 +46,19 @@ public class Tiles
                     case RequireListTool.Hammer:
                         
                         GameObject go = GameObject.Instantiate(Resources.Load("Prefabs/Spark_Particle"), parent.tilemap.CellToWorld((Vector3Int)pos), Quaternion.identity) as GameObject;
-                        GameObject.Destroy(go, 10);
-
+                        GameObject.Destroy(go, 1);
                         break;
                     case RequireListTool.Extincteur:
+                        GameObject go1 = GameObject.Instantiate(Resources.Load("Prefabs/Smoke_particle"), parent.tilemap.CellToWorld((Vector3Int)pos), Quaternion.identity) as GameObject;
+                        GameObject.Destroy(go1, 1);
                         break;
                     case RequireListTool.Welder:
+                        GameObject go2 = GameObject.Instantiate(Resources.Load("Prefabs/Spark_Particle"), parent.tilemap.CellToWorld((Vector3Int)pos), Quaternion.identity) as GameObject;
+                        GameObject.Destroy(go2, 1);
                         break;
                     case RequireListTool.Wrench:
+                        GameObject go3 = GameObject.Instantiate(Resources.Load("Prefabs/Spark_Particle"), parent.tilemap.CellToWorld((Vector3Int)pos), Quaternion.identity) as GameObject;
+                        GameObject.Destroy(go3, 1);
                         break;
                     default:
                         break;
