@@ -46,4 +46,9 @@ public class UIGame
         ui.oxygenImage.fillAmount = oxylvl / 100;
     }
 
+    public void EndGame()
+    {
+        ui.endgame.SetActive(true);
+    }
+
 }

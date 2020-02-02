@@ -6,33 +6,39 @@ using System.IO;
 
 public class GameFlow : Flow
 {
+    bool lose = false;
     override
     public void InitializeFlow()
     {
         PlayerManager.Instance.init();
         ToolsManager.Instance.init();
         SpaceShipManager.Instance.init();
+        SoundManager.Initialize();
         UIManager.Instance.init();
     }
 
     override
     public void UpdateFlow(float dt)
     {
-
-        PlayerManager.Instance.Update();
-        ToolsManager.Instance.Update();
-        SpaceShipManager.Instance.Update();
-        UIManager.Instance.Update();
-
+        if (!lose)
+        {
+            PlayerManager.Instance.Update();
+            ToolsManager.Instance.Update();
+            SpaceShipManager.Instance.Update();
+            UIManager.Instance.Update();
+        }
     }
 
     override
     public void FixedUpdateFlow(float dt)
     {
-        PlayerManager.Instance.FixedUpdate();
-        ToolsManager.Instance.FixedUpdate();
-        SpaceShipManager.Instance.FixedUpdate();
-        UIManager.Instance.FixedUpdate();
+        if (!lose)
+        {
+            PlayerManager.Instance.FixedUpdate();
+            ToolsManager.Instance.FixedUpdate();
+            SpaceShipManager.Instance.FixedUpdate();
+            UIManager.Instance.FixedUpdate();
+        }
     }
 
     override
@@ -51,5 +57,12 @@ public class GameFlow : Flow
 
         FlowManager.Instance.ChangeFlows(FlowManager.SceneNames.Game);
 
+    }
+
+    public void EndGame()
+    {
+        Debug.Log("endgame");
+        lose = true;
+        UIManager.Instance.EndGame();
     }
 }

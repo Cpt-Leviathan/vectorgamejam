@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Tool
 {
-
     private int durability, durabilityCost, durabilityMax;
     private RequireListTool type;
     private double repairSpeed;
@@ -22,9 +21,6 @@ public class Tool
 
     }
 
-    //
-    //From player, Give Use a tile to repair
-    //
     virtual public void Use(Tiles t)
     {
         if (durability > 0)

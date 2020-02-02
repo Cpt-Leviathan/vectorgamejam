@@ -33,6 +33,12 @@ public class SpaceShip
 
     public void UpToDate()
     {
+        if(oxygene <= 0)
+        {
+            GameFlow gameFlow = (GameFlow)FlowManager.Instance.currentFlow;
+            gameFlow.EndGame();
+        }
+
         if (mySpaceShip.Count > 0)
         {
             if (Time.time > nextTime)

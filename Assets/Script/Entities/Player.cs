@@ -91,7 +91,7 @@ public class Player : MonoBehaviour
                 {
                     Tiles t;
                     currentRoom.tiles.TryGetValue(adjTiles[i], out t);
-                    Debug.Log(t);
+                    //Debug.Log(t);
                     if (t != null && t.getIsDamaged())
                     {
                         tools[activeTool].Use(t);
@@ -111,22 +111,26 @@ public class Player : MonoBehaviour
         if (InputManager.GetKeysInput().W) {
             transform.localEulerAngles = new Vector3(0, 0, 0);
             dir += new Vector2(0, 1);
+            //SoundManager.PlaySound(SoundManager.EnumSound.PlayerMove);
         }
         if (InputManager.GetKeysInput().S) {
             transform.localEulerAngles = new Vector3(0, 0, 180);
             dir += new Vector2(0, -1);
+           // SoundManager.PlaySound(SoundManager.EnumSound.PlayerMove);
         }
 
         if (InputManager.GetKeysInput().A) {
             transform.localEulerAngles = new Vector3(0, 0, 90);
             dir += new Vector2(-1, 0);
+           // SoundManager.PlaySound(SoundManager.EnumSound.PlayerMove);
         }
 
         if (InputManager.GetKeysInput().D) {
             transform.localEulerAngles = new Vector3(0, 0, -90);
             dir += new Vector2(1, 0);
+            //SoundManager.PlaySound(SoundManager.EnumSound.PlayerMove);
         }
-
+        
         rb.velocity = dir * speed;
     }
     
@@ -139,24 +143,31 @@ public class Player : MonoBehaviour
             print("Hammer");
             activeTool = 0;
             UIManager.Instance.ChangeActiveTools((RequireListTool)activeTool);
+            SoundManager.PlaySound(SoundManager.EnumSound.switchTool);
         }
         if (InputManager.GetKeysInput().tool2Pressed)
         {
             print("Wrench");
             activeTool = 1;
             UIManager.Instance.ChangeActiveTools((RequireListTool)activeTool);
+            SoundManager.PlaySound(SoundManager.EnumSound.switchTool);
+
         }
         if (InputManager.GetKeysInput().tool3Pressed)
         {
             print("Extincteur");
             activeTool = 2;
             UIManager.Instance.ChangeActiveTools((RequireListTool)activeTool);
+            SoundManager.PlaySound(SoundManager.EnumSound.switchTool);
+
         }
         if (InputManager.GetKeysInput().tool4Pressed)
         {
             print("Welder");
             activeTool = 3;
             UIManager.Instance.ChangeActiveTools((RequireListTool)activeTool);
+            SoundManager.PlaySound(SoundManager.EnumSound.switchTool);
+
         }
     }
 }

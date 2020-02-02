@@ -32,6 +32,7 @@ public class SoundManager
         welder,
         wrench,
         PlayerMove,
+        switchTool,
     }
 
     //use to play sound after amount a time
@@ -41,7 +42,7 @@ public class SoundManager
     public static void Initialize()
     {
         soundTimerDictionary = new Dictionary<EnumSound, float>();
-        soundTimerDictionary[EnumSound.PlayerMove] = 0f;
+        soundTimerDictionary[EnumSound.PlayerMove] = 2f;
     }
 
 
@@ -54,6 +55,7 @@ public class SoundManager
             {
                 oneShotGameObject = new GameObject("One shot sound");
                 oneShotAudioSource = oneShotGameObject.AddComponent<AudioSource>();
+                oneShotAudioSource.loop = false;
             }
 
             oneShotAudioSource.PlayOneShot(GetAudioClip(sound));

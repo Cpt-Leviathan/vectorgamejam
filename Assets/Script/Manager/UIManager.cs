@@ -50,4 +50,9 @@ public class UIManager
     {
         uigame.Oxygene(lvl);
     }
+
+    public void EndGame()
+    {
+        uigame.EndGame();
+    }
 }
