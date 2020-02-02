@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     public bool canRefill;
     private Rigidbody2D rb;
     GameObject cinemachine;
-    GameObject minMap;
+
 
     public GridLayout gl;
 
@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
         //speed = 2;
 
         cinemachine = GameObject.Instantiate(Resources.Load("Prefabs/CM vcam2", typeof(GameObject))) as GameObject;
-        minMap = GameObject.Instantiate(Resources.Load("Prefabs/MiniMap", typeof(GameObject))) as GameObject;
+
 
         activeTool = 0;
        
@@ -46,9 +46,6 @@ public class Player : MonoBehaviour
 
         Vector3 temp = new Vector3(transform.position.x, transform.position.y, -12);
         cinemachine.transform.position = temp;
-
-        Vector3 temp2 = new Vector3(transform.position.x, transform.position.y, -35);
-        minMap.transform.position = temp2;
 
 
 
