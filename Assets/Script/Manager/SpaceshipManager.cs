@@ -21,7 +21,7 @@ public class SpaceShipManager
             return instance;
         }
     }
-    SpaceShip krina;
+    public SpaceShip krina;
     public void init()
     {
         krina = new SpaceShip();

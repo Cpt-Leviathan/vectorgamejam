@@ -45,4 +45,9 @@ public class UIManager
     {
         uigame.SetHighLigthActive(toolID);
     }
+
+    public void Oxygene(float lvl)
+    {
+        uigame.Oxygene(lvl);
+    }
 }

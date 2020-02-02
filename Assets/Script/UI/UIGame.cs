@@ -41,4 +41,9 @@ public class UIGame
         Debug.Log("number: " + (int)toolID);
     }
 
+    public void Oxygene(float oxylvl) {
+
+        ui.oxygenImage.fillAmount = oxylvl / 100;
+    }
+
 }

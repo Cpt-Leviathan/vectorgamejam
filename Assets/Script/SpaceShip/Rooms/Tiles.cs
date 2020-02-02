@@ -35,6 +35,7 @@ public class Tiles
         if (repairList.Count > 0)
             if (repairList[0] == tool)
             {
+                SpaceShipManager.Instance.krina.RemoveOxygeneLost();
                 repairList.RemoveAt(0);
             }
                 checkTile();
@@ -45,7 +46,7 @@ public class Tiles
         if (repairList.Count < 1)
         {
             isDamaged = false;
-
+            SpaceShipManager.Instance.krina.AddOxygene(2);
             parent.tilemap.SetTile((Vector3Int)pos, texture);
             parent.tilemap.RefreshTile((Vector3Int)pos);
             Debug.Log("checking");
