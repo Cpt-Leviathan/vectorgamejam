@@ -382,6 +382,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilemap: {fileID: 0}
+--- !u!114 &501294367 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9194324338197046332, guid: 10f8894ea3de7fe468cb12b92fa418c8,
+    type: 3}
+  m_PrefabInstance: {fileID: 885175229}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &521265498 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8854451257004544548, guid: 6c9209cb0d955d24c8f5fdbbac0031a8,
@@ -519,24 +531,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2058796182896304512, guid: 10f8894ea3de7fe468cb12b92fa418c8,
+    - target: {fileID: 436707719449922116, guid: 10f8894ea3de7fe468cb12b92fa418c8,
         type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 55c0bf066aa3cd64e95f62ba3eed74ff,
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 436707719449922116, guid: 10f8894ea3de7fe468cb12b92fa418c8,
         type: 3}
-    - target: {fileID: 3384538144137941203, guid: 10f8894ea3de7fe468cb12b92fa418c8,
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436707719449922116, guid: 10f8894ea3de7fe468cb12b92fa418c8,
         type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 418da0c96038b454daffe9b5555d64f5,
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2062486787977597060, guid: 10f8894ea3de7fe468cb12b92fa418c8,
         type: 3}
-    - target: {fileID: 4491355654572816725, guid: 10f8894ea3de7fe468cb12b92fa418c8,
+      propertyPath: m_Color.r
+      value: 0.03901875
+      objectReference: {fileID: 0}
+    - target: {fileID: 2062486787977597060, guid: 10f8894ea3de7fe468cb12b92fa418c8,
         type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 18653f251ce7f6446ae136d394a308ae,
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2441228067700429470, guid: 10f8894ea3de7fe468cb12b92fa418c8,
         type: 3}
+      propertyPath: m_Name
+      value: Welder
+      objectReference: {fileID: 0}
     - target: {fileID: 5592169925677790683, guid: 10f8894ea3de7fe468cb12b92fa418c8,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -602,46 +626,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: UITools
       objectReference: {fileID: 0}
-    - target: {fileID: 5592169926483208069, guid: 10f8894ea3de7fe468cb12b92fa418c8,
+    - target: {fileID: 6923943448058914759, guid: 10f8894ea3de7fe468cb12b92fa418c8,
         type: 3}
       propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923943448058914759, guid: 10f8894ea3de7fe468cb12b92fa418c8,
+        type: 3}
+      propertyPath: m_Color.g
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5592169926483208069, guid: 10f8894ea3de7fe468cb12b92fa418c8,
+    - target: {fileID: 6923943448058914759, guid: 10f8894ea3de7fe468cb12b92fa418c8,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104165723188034203, guid: 10f8894ea3de7fe468cb12b92fa418c8,
+        type: 3}
+      propertyPath: m_Name
+      value: Extincteur
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194324338197046332, guid: 10f8894ea3de7fe468cb12b92fa418c8,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.03901875
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194324338197046332, guid: 10f8894ea3de7fe468cb12b92fa418c8,
         type: 3}
       propertyPath: m_Color.g
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5592169926483208069, guid: 10f8894ea3de7fe468cb12b92fa418c8,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.10349107
-      objectReference: {fileID: 0}
-    - target: {fileID: 5592169926483208069, guid: 10f8894ea3de7fe468cb12b92fa418c8,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5592169926483208069, guid: 10f8894ea3de7fe468cb12b92fa418c8,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5592169926483208071, guid: 10f8894ea3de7fe468cb12b92fa418c8,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137656503870091101, guid: 10f8894ea3de7fe468cb12b92fa418c8,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 5d0596bd483252a46bcf285338d50790,
-        type: 3}
-    - target: {fileID: 8532012214947903891, guid: 10f8894ea3de7fe468cb12b92fa418c8,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10f8894ea3de7fe468cb12b92fa418c8, type: 3}
@@ -1548,6 +1561,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3c8708f0ff20c54da98f197ccab4e73, type: 3}
+--- !u!114 &1528880515 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2062486787977597060, guid: 10f8894ea3de7fe468cb12b92fa418c8,
+    type: 3}
+  m_PrefabInstance: {fileID: 885175229}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1591891395 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 903824224920709214, guid: 10f8894ea3de7fe468cb12b92fa418c8,
@@ -1939,17 +1964,22 @@ PrefabInstance:
       objectReference: {fileID: 1030767399}
     - target: {fileID: 3053245143236086235, guid: e10da6a0f9dfafc4bb8bdf31338090ab,
         type: 3}
+      propertyPath: fuelExtin
+      value: 
+      objectReference: {fileID: 501294367}
+    - target: {fileID: 3053245143236086235, guid: e10da6a0f9dfafc4bb8bdf31338090ab,
+        type: 3}
+      propertyPath: fuelWelder
+      value: 
+      objectReference: {fileID: 1528880515}
+    - target: {fileID: 3053245143236086235, guid: e10da6a0f9dfafc4bb8bdf31338090ab,
+        type: 3}
       propertyPath: endgame
       value: 
       objectReference: {fileID: 1176500771}
     - target: {fileID: 7234435206040997720, guid: e10da6a0f9dfafc4bb8bdf31338090ab,
         type: 3}
       propertyPath: m_Name
-      value: UILink
-      objectReference: {fileID: 0}
-    - target: {fileID: 7234435206040997720, guid: e10da6a0f9dfafc4bb8bdf31338090ab,
-        type: 3}
-      propertyPath: m_TagString
       value: UILink
       objectReference: {fileID: 0}
     m_RemovedComponents: []
