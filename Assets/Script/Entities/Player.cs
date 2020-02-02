@@ -142,6 +142,14 @@ public class Player : MonoBehaviour
 
         }
 
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+
+           
+            GameObject go = GameObject.Instantiate(Resources.Load("Prefabs/Spark_Particle"), transform.position, Quaternion.identity)as GameObject;
+            GameObject.Destroy(go, 10);
+        }
+
         InputManager.InputPkg pkg = InputManager.GetKeysInput();
 
         if (!pkg.A && !pkg.D && !pkg.S && !pkg.W) {
