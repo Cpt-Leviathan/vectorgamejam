@@ -10,7 +10,9 @@ public class Player : MonoBehaviour
     private float x, y;
     [SerializeField] private float speed;
     public bool canRefill;
+    public bool canAnswer;
     private Rigidbody2D rb;
+    private Collider2D collider;
     GameObject cinemachine;
 
 
@@ -21,7 +23,6 @@ public class Player : MonoBehaviour
         //speed = 2;
 
         cinemachine = GameObject.Instantiate(Resources.Load("Prefabs/CM vcam2", typeof(GameObject))) as GameObject;
-
 
         activeTool = 0;
        
@@ -63,8 +64,11 @@ public class Player : MonoBehaviour
     public void Interact()
     {
         if (InputManager.GetKeysInput().F)
+
             if (canRefill)
                 tools[activeTool].FillEnergy();
+            else if (canAnswer)
+                CallerManager.Instance.caller.Hangup();
             else
             {
                 List<Vector2Int> adjTiles = new List<Vector2Int>();
@@ -81,9 +85,9 @@ public class Player : MonoBehaviour
                         adjTiles.Add(new Vector2Int(currentRoom.tilemap.WorldToCell(transform.position).x + x, currentRoom.tilemap.WorldToCell(transform.position).y + y));
                     }
                 }
-               
+
                 bool foundDamaged = false;
-     
+
                 for (int i = 0; i < adjTiles.Count && !foundDamaged; i++)
                 {
                     Tiles t;

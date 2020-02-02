@@ -16,6 +16,7 @@ public class GameFlow : Flow
         SoundManager.Initialize();
         UIManager.Instance.init();
         MeteoriteManager.Instance.init();
+        CallerManager.Instance.init();
     }
 
     override
@@ -28,6 +29,7 @@ public class GameFlow : Flow
             SpaceShipManager.Instance.Update();
             UIManager.Instance.Update();
             MeteoriteManager.Instance.Update();
+            CallerManager.Instance.Update();
         }
     }
 
