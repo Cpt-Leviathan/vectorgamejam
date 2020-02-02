@@ -25,7 +25,7 @@ public class CallerManager
 
     public void init()
     {
-        GameObject go = GameObject.FindGameObjectWithTag("caller");
+        GameObject go = GameObject.Find("Caller");
         caller = go.GetComponent<Caller>();
         if (caller != null)
         {
